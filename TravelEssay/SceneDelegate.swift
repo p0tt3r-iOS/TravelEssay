@@ -10,12 +10,22 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        
+        Thread.sleep(forTimeInterval: 3)
+        
+        
+//         아래의 코드로 3초간 딜레이를 주면 status bar는 1초간 딜레이 후 표시됨
+//        window?.rootViewController = UIStoryboard(name: "LaunchScreen", bundle: nil).instantiateInitialViewController()
+//        window?.makeKeyAndVisible()
+//
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
+//            self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+//        }
+        
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 
