@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,15 +23,12 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="aKM-Ve-5lp">
                                 <rect key="frame" x="0.0" y="448" width="414" height="448"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="aKM-Ve-5lp" secondAttribute="height" multiplier="207:224" id="46J-SY-NCI"/>
-                                </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l7e-id-cdG" userLabel="UpperView">
-                                <rect key="frame" x="0.0" y="44" width="414" height="404"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OrG-yW-lhO" userLabel="TextView">
-                                        <rect key="frame" x="0.0" y="138" width="414" height="128"/>
+                                        <rect key="frame" x="0.0" y="160" width="414" height="128"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="여행기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="43" translatesAutoresizingMaskIntoConstraints="NO" id="aox-tx-hnQ">
                                                 <rect key="frame" x="87" y="0.0" width="240" height="98"/>
@@ -39,7 +37,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="열심히 일한 당신 떠나요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="xsX-oq-seh">
-                                                <rect key="frame" x="121.5" y="106" width="171" height="19"/>
+                                                <rect key="frame" x="121.66666666666669" y="106" width="171" height="19"/>
                                                 <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -67,7 +65,9 @@
                         <constraints>
                             <constraint firstItem="l7e-id-cdG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7YJ-VU-4o1"/>
                             <constraint firstAttribute="bottom" secondItem="aKM-Ve-5lp" secondAttribute="bottom" id="IMT-zD-IBk"/>
-                            <constraint firstItem="l7e-id-cdG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="OWp-t9-mMf"/>
+                            <constraint firstItem="l7e-id-cdG" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.5" id="KGj-2n-Jhk"/>
+                            <constraint firstItem="aKM-Ve-5lp" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.5" id="MTp-Qu-HO7"/>
+                            <constraint firstItem="l7e-id-cdG" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="OWp-t9-mMf"/>
                             <constraint firstAttribute="trailing" secondItem="aKM-Ve-5lp" secondAttribute="trailing" id="ljK-Vn-cfO"/>
                             <constraint firstItem="aKM-Ve-5lp" firstAttribute="top" secondItem="l7e-id-cdG" secondAttribute="bottom" id="pOk-hH-rYb"/>
                             <constraint firstItem="aKM-Ve-5lp" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="rR8-lA-FKy"/>
