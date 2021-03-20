@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC92CF8726059A1E00CAC81A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC92CF8626059A1E00CAC81A /* SignUpViewController.swift */; };
 		BCAAB76026047AA50080F080 /* NanumGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCAAB75C26047A880080F080 /* NanumGothic.ttf */; };
 		BCAAB76126047AA50080F080 /* NanumSquareBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCAAB75D26047A890080F080 /* NanumSquareBold.ttf */; };
 		BCAAB76226047AA50080F080 /* NanumSquareRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCAAB75F26047A950080F080 /* NanumSquareRegular.ttf */; };
+		BCBAFF9A26063E29004E90DB /* FindPWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBAFF9926063E29004E90DB /* FindPWViewController.swift */; };
 		BCD35AA82602FA3300A06BCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD35AA72602FA3300A06BCF /* AppDelegate.swift */; };
 		BCD35AAA2602FA3300A06BCF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD35AA92602FA3300A06BCF /* SceneDelegate.swift */; };
 		BCD35AAC2602FA3300A06BCF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD35AAB2602FA3300A06BCF /* MainViewController.swift */; };
@@ -24,9 +26,11 @@
 		57C0435AC2181DF505AA4D20 /* Pods-TravelEssay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelEssay.release.xcconfig"; path = "Target Support Files/Pods-TravelEssay/Pods-TravelEssay.release.xcconfig"; sourceTree = "<group>"; };
 		9E2E89C320815EB2E3F8BA5F /* Pods-TravelEssay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelEssay.debug.xcconfig"; path = "Target Support Files/Pods-TravelEssay/Pods-TravelEssay.debug.xcconfig"; sourceTree = "<group>"; };
 		A67C53D0B229147C4CFA2D7D /* Pods_TravelEssay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelEssay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC92CF8626059A1E00CAC81A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		BCAAB75C26047A880080F080 /* NanumGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothic.ttf; sourceTree = "<group>"; };
 		BCAAB75D26047A890080F080 /* NanumSquareBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareBold.ttf; sourceTree = "<group>"; };
 		BCAAB75F26047A950080F080 /* NanumSquareRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRegular.ttf; sourceTree = "<group>"; };
+		BCBAFF9926063E29004E90DB /* FindPWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPWViewController.swift; sourceTree = "<group>"; };
 		BCD35AA42602FA3300A06BCF /* TravelEssay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelEssay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD35AA72602FA3300A06BCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCD35AA92602FA3300A06BCF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +120,8 @@
 			children = (
 				BCD35AAB2602FA3300A06BCF /* MainViewController.swift */,
 				BCD35AC82603212900A06BCF /* LoginViewController.swift */,
+				BC92CF8626059A1E00CAC81A /* SignUpViewController.swift */,
+				BCBAFF9926063E29004E90DB /* FindPWViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -246,10 +252,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCBAFF9A26063E29004E90DB /* FindPWViewController.swift in Sources */,
 				BCD35AC92603212900A06BCF /* LoginViewController.swift in Sources */,
 				BCD35AAC2602FA3300A06BCF /* MainViewController.swift in Sources */,
 				BCD35AA82602FA3300A06BCF /* AppDelegate.swift in Sources */,
 				BCD35AAA2602FA3300A06BCF /* SceneDelegate.swift in Sources */,
+				BC92CF8726059A1E00CAC81A /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

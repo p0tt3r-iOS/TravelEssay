@@ -66,7 +66,6 @@
                                         <rect key="frame" x="24.333333333333343" y="8" width="341.33333333333326" height="47"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="440" id="5C8-oV-DbG"/>
                                             <constraint firstAttribute="height" constant="47" id="xQZ-cU-Nn6"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="19"/>
@@ -104,7 +103,7 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Info" translatesAutoresizingMaskIntoConstraints="NO" id="LXA-Fa-wXa">
-                                        <rect key="frame" x="24.333333333333329" y="134" width="18" height="18"/>
+                                        <rect key="frame" x="24.333333333333314" y="134" width="18" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="LXA-Fa-wXa" secondAttribute="height" multiplier="1:1" id="G30-11-blU"/>
                                             <constraint firstAttribute="width" constant="18" id="K4s-RA-jJJ"/>
@@ -129,7 +128,6 @@
                                     <constraint firstItem="1iy-IK-TGP" firstAttribute="leading" secondItem="Yra-cq-niB" secondAttribute="leading" id="ogI-09-tkg"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Yra-cq-niB" secondAttribute="trailing" constant="16" id="p9A-dj-0aM"/>
                                     <constraint firstItem="1iy-IK-TGP" firstAttribute="trailing" secondItem="Yra-cq-niB" secondAttribute="trailing" id="pxC-aQ-yy1"/>
-                                    <constraint firstItem="1iy-IK-TGP" firstAttribute="centerX" secondItem="mKz-qL-1qs" secondAttribute="centerX" id="qQv-jo-hku"/>
                                     <constraint firstItem="Yra-cq-niB" firstAttribute="centerX" secondItem="mKz-qL-1qs" secondAttribute="centerX" id="uov-aA-5am"/>
                                 </constraints>
                             </view>
@@ -137,6 +135,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.30988144870000001" green="0.78913480039999995" blue="0.51261025670000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="mKz-qL-1qs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6MC-kO-bmB"/>
                             <constraint firstItem="mKz-qL-1qs" firstAttribute="trailing" secondItem="Fjm-7k-Uxr" secondAttribute="trailing" id="94b-KG-xEs"/>
                             <constraint firstItem="mKz-qL-1qs" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="9XL-XU-ut9"/>
                             <constraint firstItem="mKz-qL-1qs" firstAttribute="leading" secondItem="Fjm-7k-Uxr" secondAttribute="leading" id="Ars-C2-RLQ"/>
@@ -155,37 +154,192 @@
             </objects>
             <point key="canvasLocation" x="586.15384615384619" y="83.886255924170612"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="1Qy-RH-HEp">
             <objects>
-                <viewController id="sGH-7g-eyv" sceneMemberID="viewController">
+                <viewController id="sGH-7g-eyv" customClass="SignUpViewController" customModule="TravelEssay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vaW-aZ-ps0">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JGq-VN-Lf8" userLabel="UpperView">
+                                <rect key="frame" x="0.0" y="88" width="390" height="361"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="58S-RU-jTz" userLabel="LowerView">
+                                <rect key="frame" x="0.0" y="449" width="390" height="361"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEb-VP-UoH">
+                                        <rect key="frame" x="25" y="8" width="340" height="47"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="47" id="dDs-3Q-WGe"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="340" id="yYz-Es-JDT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="19"/>
+                                        <state key="normal" title="확인">
+                                            <color key="titleColor" red="0.30988144870000001" green="0.78913480039999995" blue="0.51261025670000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="14"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="QEb-VP-UoH" firstAttribute="centerX" secondItem="58S-RU-jTz" secondAttribute="centerX" id="1gK-In-ABi"/>
+                                    <constraint firstItem="QEb-VP-UoH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="58S-RU-jTz" secondAttribute="leading" constant="16" id="HSU-v0-RNd"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="QEb-VP-UoH" secondAttribute="trailing" constant="16" id="Nys-s0-F73"/>
+                                    <constraint firstItem="QEb-VP-UoH" firstAttribute="top" secondItem="58S-RU-jTz" secondAttribute="top" constant="8" id="Q3K-Z0-73W"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="umd-jV-7TJ"/>
                         <color key="backgroundColor" red="0.30988144870000001" green="0.78913480039999995" blue="0.51261025670000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="JGq-VN-Lf8" firstAttribute="trailing" secondItem="umd-jV-7TJ" secondAttribute="trailing" id="1nT-aN-zi9"/>
+                            <constraint firstItem="JGq-VN-Lf8" firstAttribute="leading" secondItem="umd-jV-7TJ" secondAttribute="leading" id="2bi-4m-0sc"/>
+                            <constraint firstItem="JGq-VN-Lf8" firstAttribute="height" secondItem="umd-jV-7TJ" secondAttribute="height" multiplier="0.5" id="9O8-Cu-biy"/>
+                            <constraint firstItem="58S-RU-jTz" firstAttribute="bottom" secondItem="umd-jV-7TJ" secondAttribute="bottom" id="Abi-xk-UiT"/>
+                            <constraint firstItem="58S-RU-jTz" firstAttribute="height" secondItem="umd-jV-7TJ" secondAttribute="height" multiplier="0.5" id="Mk8-LU-mAq"/>
+                            <constraint firstItem="JGq-VN-Lf8" firstAttribute="leading" secondItem="58S-RU-jTz" secondAttribute="leading" id="aqn-Kn-j6e"/>
+                            <constraint firstItem="JGq-VN-Lf8" firstAttribute="trailing" secondItem="58S-RU-jTz" secondAttribute="trailing" id="jYj-g5-HzP"/>
+                            <constraint firstItem="58S-RU-jTz" firstAttribute="top" secondItem="JGq-VN-Lf8" secondAttribute="bottom" id="t02-mV-cK7"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IiW-aE-icY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f8a-qI-NiH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1354" y="463"/>
+            <point key="canvasLocation" x="1506" y="432"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Bn3-Md-fCR">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="huc-Xu-0eV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="PLt-WR-i3x" customClass="LoginViewController" customModule="TravelEssay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z6a-ds-dPi">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1pG-Tg-nYh" userLabel="UpperView">
+                                <rect key="frame" x="0.0" y="88" width="390" height="361"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="nOg-ie-1Fr">
+                                        <rect key="frame" x="25" y="163" width="340" height="128"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UserID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ovs-cz-R2V">
+                                                <rect key="frame" x="0.0" y="0.0" width="340" height="48"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="440" id="9A8-3t-Gx3"/>
+                                                    <constraint firstAttribute="height" constant="48" id="oqc-lQ-H7P"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="19"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ybF-n3-Qkw">
+                                                <rect key="frame" x="0.0" y="80" width="340" height="48"/>
+                                                <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="19"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="ovs-cz-R2V" secondAttribute="trailing" id="3oJ-eU-BZB"/>
+                                            <constraint firstItem="ybF-n3-Qkw" firstAttribute="leading" secondItem="ovs-cz-R2V" secondAttribute="leading" id="Acd-Sc-p5s"/>
+                                            <constraint firstItem="ovs-cz-R2V" firstAttribute="leading" secondItem="nOg-ie-1Fr" secondAttribute="leading" id="JEW-e9-Dxt"/>
+                                            <constraint firstItem="ybF-n3-Qkw" firstAttribute="trailing" secondItem="ovs-cz-R2V" secondAttribute="trailing" id="b54-fM-GTN"/>
+                                            <constraint firstItem="ovs-cz-R2V" firstAttribute="top" secondItem="nOg-ie-1Fr" secondAttribute="top" id="rP6-2S-3y4"/>
+                                        </constraints>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msj-vE-div">
+                                        <rect key="frame" x="276" y="299" width="89" height="30"/>
+                                        <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="15"/>
+                                        <state key="normal" title="비밀번호 찾기">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="EEV-BX-XOA" kind="show" id="llC-5I-mJK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="nOg-ie-1Fr" secondAttribute="trailing" constant="197" id="1Ah-Xh-Oy5"/>
+                                    <constraint firstItem="nOg-ie-1Fr" firstAttribute="centerX" secondItem="1pG-Tg-nYh" secondAttribute="centerX" id="9Cu-La-kIn"/>
+                                    <constraint firstItem="msj-vE-div" firstAttribute="top" secondItem="nOg-ie-1Fr" secondAttribute="bottom" constant="8" id="ApF-XO-Jna"/>
+                                    <constraint firstItem="msj-vE-div" firstAttribute="trailing" secondItem="nOg-ie-1Fr" secondAttribute="trailing" id="Wqr-7e-hxC"/>
+                                    <constraint firstItem="nOg-ie-1Fr" firstAttribute="leading" relation="lessThanOrEqual" secondItem="1pG-Tg-nYh" secondAttribute="leading" constant="197" id="rEK-cE-8DU"/>
+                                    <constraint firstAttribute="bottom" secondItem="msj-vE-div" secondAttribute="bottom" constant="32" id="zle-zJ-cx6"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yvn-TS-kDg" userLabel="LowerView">
+                                <rect key="frame" x="0.0" y="449" width="390" height="361"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISj-0Y-GqQ">
+                                        <rect key="frame" x="25" y="8" width="340" height="47"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="47" id="eRf-b9-9l1"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="340" id="pg1-70-Uvz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="19"/>
+                                        <state key="normal" title="확인">
+                                            <color key="titleColor" red="0.30988144870000001" green="0.78913480039999995" blue="0.51261025670000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="14"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ISj-0Y-GqQ" firstAttribute="centerX" secondItem="Yvn-TS-kDg" secondAttribute="centerX" id="17j-cu-5a5"/>
+                                    <constraint firstItem="ISj-0Y-GqQ" firstAttribute="top" secondItem="Yvn-TS-kDg" secondAttribute="top" constant="8" id="nNy-Xm-S1p"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Aq2-dL-juZ"/>
                         <color key="backgroundColor" red="0.30988144870000001" green="0.78913480039999995" blue="0.51261025670000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1pG-Tg-nYh" firstAttribute="height" secondItem="Aq2-dL-juZ" secondAttribute="height" multiplier="0.5" id="Gse-QN-cS0"/>
+                            <constraint firstItem="1pG-Tg-nYh" firstAttribute="trailing" secondItem="Yvn-TS-kDg" secondAttribute="trailing" id="KoC-Ii-dxf"/>
+                            <constraint firstItem="ISj-0Y-GqQ" firstAttribute="leading" secondItem="nOg-ie-1Fr" secondAttribute="leading" id="MUE-ui-Irc"/>
+                            <constraint firstItem="Yvn-TS-kDg" firstAttribute="bottom" secondItem="Aq2-dL-juZ" secondAttribute="bottom" id="Q9k-jk-RVU"/>
+                            <constraint firstItem="1pG-Tg-nYh" firstAttribute="leading" secondItem="Yvn-TS-kDg" secondAttribute="leading" id="Yls-TC-yKJ"/>
+                            <constraint firstItem="1pG-Tg-nYh" firstAttribute="trailing" secondItem="Z6a-ds-dPi" secondAttribute="trailing" id="aCb-Xu-4nx"/>
+                            <constraint firstItem="Yvn-TS-kDg" firstAttribute="top" secondItem="1pG-Tg-nYh" secondAttribute="bottom" id="cxb-WP-NnU"/>
+                            <constraint firstItem="ISj-0Y-GqQ" firstAttribute="trailing" secondItem="nOg-ie-1Fr" secondAttribute="trailing" id="iZB-Sx-lYU"/>
+                            <constraint firstItem="Yvn-TS-kDg" firstAttribute="height" secondItem="Aq2-dL-juZ" secondAttribute="height" multiplier="0.5" id="oUS-0C-d8S"/>
+                            <constraint firstItem="1pG-Tg-nYh" firstAttribute="leading" secondItem="Z6a-ds-dPi" secondAttribute="leading" id="pzh-Zw-4Ss"/>
+                            <constraint firstItem="1pG-Tg-nYh" firstAttribute="top" secondItem="Aq2-dL-juZ" secondAttribute="top" id="uSm-Nv-UTk"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Jic-hJ-0Ea"/>
+                    <connections>
+                        <outlet property="idTextField" destination="ovs-cz-R2V" id="ayg-m1-AdU"/>
+                        <outlet property="pwTextField" destination="ybF-n3-Qkw" id="UXG-9x-C9R"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="huc-Xu-0eV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1354" y="-275"/>
+            <point key="canvasLocation" x="1505" y="-225"/>
+        </scene>
+        <!--FindPW View Controller-->
+        <scene sceneID="YCM-Aw-vn1">
+            <objects>
+                <viewController id="EEV-BX-XOA" customClass="FindPWViewController" customModule="TravelEssay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EJf-5w-AVi">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="OgA-VE-K4s"/>
+                        <color key="backgroundColor" red="0.30988144870000001" green="0.78913480039999995" blue="0.51261025670000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="eOK-it-cvT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HEh-Ze-b2C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1505" y="-885"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IX6-Mc-vEC">
@@ -193,7 +347,7 @@
                 <navigationController id="bxu-x4-ABB" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" backIndicatorImage="Back" backIndicatorTransitionMaskImage="Back" id="Z7b-bW-OfY">
+                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" id="Z7b-bW-OfY">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -217,7 +371,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Back" width="3" height="6"/>
         <image name="Info" width="6" height="6"/>
     </resources>
 </document>
