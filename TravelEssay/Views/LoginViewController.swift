@@ -9,9 +9,18 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    // MARK: - IBOutlets
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var pwTextField: UITextField!
+    @IBOutlet weak var idErrorLabel: UIStackView!
+    @IBOutlet weak var pwErrorLabel: UILabel!
     
+    // MARK: - IBActions
+    @IBAction func loginButtonPressed(_ sender: UIButton) {
+        
+    }
+    
+    // MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
 
