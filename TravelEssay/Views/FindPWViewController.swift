@@ -8,13 +8,40 @@
 import UIKit
 
 class FindPWViewController: UIViewController {
+    
+    let findPWViewModel = FindPWViewModel()
 
+    @IBOutlet weak var idTextField: UITextField!
+    @IBOutlet weak var idErrorLabel: UILabel!
+    
+    @IBAction func idTextFieldEditingDidBegin(_ sender: UITextField) {
+        idTextField.underlined(placeholder: "UserID")
+        idErrorLabel.textColor = .clear
+    }
+    
+    @IBAction func findPWButtonPressed(_ sender: UIButton) {
+        
+        guard let username = idTextField?.text else { return }
+        
+        if username.count == 0 {
+            idErrorLabel.textColor = .red
+        } else {
+            findPWViewModel.tryFindPassword(username: username)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                self.makeAlert(title: self.findPWViewModel.alertTitle, message: self.findPWViewModel.alertMessage)
+            }
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "비밀번호 찾기"
-        
-        
+        idTextField.underlined(placeholder: "UserID", fieldColor: UIColor.red)
     }
+    
+    
 
 }

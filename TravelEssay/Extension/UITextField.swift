@@ -8,14 +8,19 @@
 import UIKit
 
 extension UITextField {
-    func underlined(placeholder: String) {
+    func underlined(placeholder: String, fieldColor: UIColor = UIColor.white) {
+        
         borderStyle = .none
+        
         let border = CALayer()
         border.frame = CGRect(x: 0, y: frame.size.height - 1, width: frame.width, height: 1)
-        border.backgroundColor = UIColor.white.cgColor
+        border.backgroundColor = fieldColor.cgColor
+        
         layer.addSublayer(border)
+        
         textAlignment = .left
         textColor = UIColor.white
-        attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        
+        attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: fieldColor])
     }
 }

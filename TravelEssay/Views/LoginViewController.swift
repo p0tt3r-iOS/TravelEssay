@@ -20,11 +20,20 @@ class LoginViewController: UIViewController {
     
     // MARK: - IBActions
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        self.loginViewModel.tryLogin(username: self.idTextField.text!, password: self.pwTextField.text!)
+        
+        let loginGroup = DispatchGroup()
+        
+        DispatchQueue.main.async(group: loginGroup) {
+            self.loginViewModel.tryLogin(username: self.idTextField.text!, password: self.pwTextField.text!)
+        }
         
         // tryLogin 함수가 끝나기 전에 아래 내용이 실행되는 것을 방지하기 위해 asyncAfter 함수 사용)
-        // 나중에 인터넷이 느려서 tryLogin 함수가 느려지면 어떻게 될 지 모름
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        // Network Duration이 1.5초 이상 소모되면, 실행되지 않음
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+        
+        // Dispatch Group을 통해, 그룹 내 모든 작업이 종료되면 실행(작동하지 않음...)
+        // loginGroup.notify(queue: DispatchQueue.main) {
+            
             self.idErrorLabel.text = self.loginViewModel.idError
             self.idErrorLabel.textColor = self.loginViewModel.idErrorLabelColor
             self.pwErrorLabel.text = self.loginViewModel.pwError

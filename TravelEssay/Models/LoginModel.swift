@@ -9,12 +9,14 @@ import Foundation
 import UIKit
 
 struct LoginModel: Encodable {
+    
     let login: String
     let password: String
 }
 
 // MARK: - Login Response Model
 struct LoginResponseModel: Codable {
+    
     let lastLogin: Int
     let userStatus: String
     let created: Int

@@ -53,14 +53,18 @@ class APIManager {
     
     // MARK: - Calling Login API
     func callingLoginAPI(login: LoginModel, completionHandler: @escaping Handler) {
+        
         let headers: HTTPHeaders = [.contentType("application/json")]
         
         AF.request(login_url, method: .post, parameters: login, encoder: JSONParameterEncoder.default, headers: headers).response { response in
+            
             print("Debug print as follow: ")
             debugPrint(response)
+            
             switch response.result {
             case .success(let data):
                 print("Hey Succeeded")
+                
                 do {
                     let json = try JSONDecoder().decode(LoginResponseModel.self, from: data!)
                     
@@ -85,6 +89,7 @@ class APIManager {
                         completionHandler(.failure(.custom(message: "NP")))
                     }
                 }
+                
             case .failure(let error):
                 print("Hey Failed")
                 print(error.localizedDescription)
@@ -97,6 +102,7 @@ class APIManager {
     func callingResetLoginAPI(id: String, completionHandler: @escaping (Bool, String) -> ()) {
         
         AF.request("\(base_url)/restorepassword/\(id)", method: .get, parameters: nil, headers: nil).response { response in
+            
             switch response.result {
             case .success(let data):
                 if response.response?.statusCode == 200 {

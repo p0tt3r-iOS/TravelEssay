@@ -26,11 +26,13 @@ class LoginViewModel {
         if username.isEmpty {
             idError = "아이디가 입력되지 않았습니다."
             idErrorLabelColor = .red
+            
             if password.isEmpty {
                 pwError = "비밀번호가 입력되지 않았습니다."
                 pwErrorLabelColor = .red
                 return
             }
+            
             return
         }
         
@@ -43,6 +45,7 @@ class LoginViewModel {
         let loginModel = LoginModel(login: username, password: password)
         
         APIManager.sharedInstance.callingLoginAPI(login: loginModel) { (result) in
+            
             switch result {
             // Login Completion Handler
             case .success(let json):
@@ -57,12 +60,13 @@ class LoginViewModel {
                 UserDefaults.standard.set(self.objectID, forKey: "ObjectID")
                 
             case .failure(let error):
+                // Login Failed
                 if case .custom(let value) = error {
                     if value == "IPE" {
                         self.pwError = "아이디 또는 비밀번호가 일치하지 않습니다."
                         self.pwErrorLabelColor = .red
                     } else if value == "NI" {
-                        self.pwError = "인터넷이 연결되어 있지 않습니다. 로그인 시 인터넷 연결이 필요합니다."
+                        self.pwError = "네트워크 연결을 확인해주세요."
                         self.pwErrorLabelColor = .red
                     } else if value == "ETCLE" {
                         self.pwError = "알 수 없는 에러가 발생했습니다. 다시 로그인 해주세요."
