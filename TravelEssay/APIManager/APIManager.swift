@@ -26,27 +26,43 @@ class APIManager {
         let headers: HTTPHeaders = [.contentType("application/json")]
         
         AF.request(register_url, method: .post, parameters: register, encoder: JSONParameterEncoder.default, headers: headers).response { response in
+            
             print("Debug print as follows: ")
             debugPrint(response)
             
             switch response.result {
             case .success(let data):
                 do {
-                    let json = try JSONSerialization.jsonObject(with: data!, options: [])
+                    let json = try JSONDecoder().decode(RegisterResponseModel.self, from: data!)
                     print("json printing...\n", json)
                     if response.response?.statusCode == 200 {
                         completionHandler(true, nil)
                     } else {
-                        let string = (json as AnyObject).value(forKey: "message") as? String
+                        let string = (json as AnyObject).value(forKey: "code") as? String
+                        print("Success but error: \(string ?? "")")
                         completionHandler(false, string)
                     }
                 } catch {
-                    print(error.localizedDescription)
-                    completionHandler(false, "please try again")
+                    do {
+                        let json = try JSONDecoder().decode(ErrorMessageModel.self, from: data!)
+                        
+                        switch json.code {
+                        case 3033:
+                            completionHandler(false, "AE")
+                        case 8000:
+                            completionHandler(false, "LL")
+                        default:
+                            completionHandler(false, "UE")
+                        }
+                    } catch {
+                        print(error.localizedDescription)
+                        completionHandler(false, "NI")
+                    }
+                    
                 }
             case .failure(let error):
                 print(error.localizedDescription)
-                completionHandler(false, "please try again")
+                completionHandler(false, "NI")
             }
         }
     }
