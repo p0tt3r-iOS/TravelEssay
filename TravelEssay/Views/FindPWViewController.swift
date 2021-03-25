@@ -9,11 +9,14 @@ import UIKit
 
 class FindPWViewController: UIViewController {
     
-    let findPWViewModel = FindPWViewModel()
+    // MARK: - Properties
+    let findPWViewModel = FindPwViewModel()
 
+    // MARK: - IBOutlets
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var idErrorLabel: UILabel!
     
+    // MARK: - IBActions
     @IBAction func idTextFieldEditingDidBegin(_ sender: UITextField) {
         idTextField.underlined(placeholder: "UserID")
         idErrorLabel.textColor = .clear
@@ -34,14 +37,11 @@ class FindPWViewController: UIViewController {
         }
     }
     
-    
+    // MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "비밀번호 찾기"
         idTextField.underlined(placeholder: "UserID", fieldColor: UIColor.red)
     }
-    
-    
-
 }

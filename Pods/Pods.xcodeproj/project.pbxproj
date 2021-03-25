@@ -256,7 +256,7 @@
 		09F0A09CB49A79AB20E62D027CBCCFAF /* SocketLogger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketLogger.swift; path = Source/SocketIO/Util/SocketLogger.swift; sourceTree = "<group>"; };
 		0B4389922FE0769900B07223CD0038D5 /* UnitOfWorkCreate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UnitOfWorkCreate.swift; path = Sources/SwiftSDK/Persistence/Transaction/UOW/UnitOfWorkCreate.swift; sourceTree = "<group>"; };
 		0D1AC22937E75C6D3E64403B9AB17076 /* RelationStatus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RelationStatus.swift; path = Sources/SwiftSDK/Persistence/RT/RelationStatus.swift; sourceTree = "<group>"; };
-		0D3A78EB1E0F66691BAD4F82941B0856 /* Backendless.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Backendless.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D3A78EB1E0F66691BAD4F82941B0856 /* Backendless.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Backendless.framework; path = BackendlessSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D3C98EEE51B7A557494B4B6E2D8174C /* IDataStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IDataStore.swift; path = Sources/SwiftSDK/Persistence/IDataStore.swift; sourceTree = "<group>"; };
 		0D5EFA9EADB35CCE470917499FEC776C /* RTClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RTClient.swift; path = Sources/SwiftSDK/RT/RTClient.swift; sourceTree = "<group>"; };
 		1354D1060D97D59631BDB782BABD0DA9 /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
@@ -305,7 +305,7 @@
 		4D0CDB0D4509F6220525C567639E0D9B /* Pods-TravelEssay-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TravelEssay-umbrella.h"; sourceTree = "<group>"; };
 		4DF7BF8F86309645A80AB6EC9BFEE40D /* SSLSecurity.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SSLSecurity.swift; path = Sources/Starscream/SSLSecurity.swift; sourceTree = "<group>"; };
 		5075741E9FF3B4A1FCBD52931CAE3383 /* SocketEngineClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketEngineClient.swift; path = Source/SocketIO/Engine/SocketEngineClient.swift; sourceTree = "<group>"; };
-		50C0B0879B7086918A819F704BF40B4B /* SocketIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SocketIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50C0B0879B7086918A819F704BF40B4B /* SocketIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SocketIO.framework; path = "Socket.IO-Client-Swift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50DEC037AADAEA5B56FAD1F2A5F453BA /* BackendlessUser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BackendlessUser.swift; path = Sources/SwiftSDK/UserService/BackendlessUser.swift; sourceTree = "<group>"; };
 		515E2DDB2B61F9DCC17686286FD6FFC9 /* DataTypesUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataTypesUtils.swift; path = Sources/SwiftSDK/Utils/DataTypesUtils.swift; sourceTree = "<group>"; };
 		5199A186AB987FE068B6B840737667E2 /* SocketIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SocketIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -315,7 +315,7 @@
 		57FA97FC79C26B18FF0EA433C6873207 /* HTTPMethod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = Source/HTTPMethod.swift; sourceTree = "<group>"; };
 		59854B6941A3EEB1CA0B6D9A93A62EEC /* RequestInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestInterceptor.swift; path = Source/RequestInterceptor.swift; sourceTree = "<group>"; };
 		5C401245B6887530E81D815ACE3B0B01 /* UserInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UserInfo.swift; path = Sources/SwiftSDK/RT/UserInfo.swift; sourceTree = "<group>"; };
-		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E0D623DB8A5A72D9579DF4E89A56F26 /* BackendlessSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BackendlessSwift-prefix.pch"; sourceTree = "<group>"; };
 		5E66130C5E289AE025A2A397120297EF /* SocketRawView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketRawView.swift; path = Source/SocketIO/Client/SocketRawView.swift; sourceTree = "<group>"; };
 		5F3D9A7B5C49858B25C16F974C970686 /* SocketManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketManager.swift; path = Source/SocketIO/Manager/SocketManager.swift; sourceTree = "<group>"; };
@@ -337,7 +337,7 @@
 		6D625DB581C692A850D013F82F05B625 /* BackendlessSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BackendlessSwift-dummy.m"; sourceTree = "<group>"; };
 		7187D2C3B1BD7633D6FA916F76086B16 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
 		71BAD381BAC2A60C0C7F99F88F50FDA6 /* Starscream.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Starscream.modulemap; sourceTree = "<group>"; };
-		71C048557460E89DB4CDC4C69F538ED4 /* Pods_TravelEssay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelEssay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		71C048557460E89DB4CDC4C69F538ED4 /* Pods_TravelEssay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TravelEssay.framework; path = "Pods-TravelEssay.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71DC53D5E3A1FAD32C30DF69278556EE /* ObjectProperty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ObjectProperty.swift; path = Sources/SwiftSDK/Property/ObjectProperty.swift; sourceTree = "<group>"; };
 		7347F68AD9D77CD0BEE6689E8136F579 /* RTListener.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RTListener.swift; path = Sources/SwiftSDK/RT/RTListener.swift; sourceTree = "<group>"; };
 		73C5E40CCB0DFE5B19E47670CA201AD1 /* EventHandlerForClass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventHandlerForClass.swift; path = Sources/SwiftSDK/Persistence/RT/EventHandlerForClass.swift; sourceTree = "<group>"; };
@@ -359,7 +359,7 @@
 		831E9274F1EB829B3DF6F92D225758BD /* PersistenceServiceUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PersistenceServiceUtils.swift; path = Sources/SwiftSDK/Persistence/PersistenceServiceUtils.swift; sourceTree = "<group>"; };
 		83B2C7E423329A4296F7D9A4D0318D67 /* BackendlessSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BackendlessSwift.release.xcconfig; sourceTree = "<group>"; };
 		86FF936AC72559265AB22FBA426750E3 /* Pods-TravelEssay-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TravelEssay-Info.plist"; sourceTree = "<group>"; };
-		891B2270823847ED23F2ECFC28F935EC /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		891B2270823847ED23F2ECFC28F935EC /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Starscream.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A1AB2396199D113D4EC6E350E6898DB /* MessagingService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MessagingService.swift; path = Sources/SwiftSDK/Messaging/MessagingService.swift; sourceTree = "<group>"; };
 		8A8748F0B734B61FA5DBBC3CE0620ABE /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
 		8D26838416FFC2D617445EC957C4C1D0 /* SocketEngine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketEngine.swift; path = Source/SocketIO/Engine/SocketEngine.swift; sourceTree = "<group>"; };
@@ -375,7 +375,7 @@
 		97869BF8E83A32C04EA4E2595464093C /* AtomicCounters.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AtomicCounters.swift; path = Sources/SwiftSDK/AtomicCounters/AtomicCounters.swift; sourceTree = "<group>"; };
 		999123CDA16CFD11D334A5FADE92D9CE /* Operation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operation.swift; path = Sources/SwiftSDK/Persistence/Transaction/Operation.swift; sourceTree = "<group>"; };
 		9BEFA67380CF6FA29118E8CE9E6C5FCB /* SocketIOClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketIOClient.swift; path = Source/SocketIO/Client/SocketIOClient.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DD8847EFBFA1F3454D94E2692AD4E30 /* SocketStringReader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SocketStringReader.swift; path = Source/SocketIO/Util/SocketStringReader.swift; sourceTree = "<group>"; };
 		A090EAA8E1D9B2AFE1B1AB85BCFF4E0C /* Alamofire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamofire-Info.plist"; sourceTree = "<group>"; };
 		A0D70E63A3C1134A8B8B88C340791569 /* ProcessResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProcessResponse.swift; path = Sources/SwiftSDK/Response/ProcessResponse.swift; sourceTree = "<group>"; };
@@ -546,6 +546,7 @@
 				C95FC51601D752EBA1AC4544BD3B11EA /* WebSocket.swift */,
 				C5EEDCC894F5B4DCBFC71FABB9EF4782 /* Support Files */,
 			);
+			name = Starscream;
 			path = Starscream;
 			sourceTree = "<group>";
 		};
@@ -638,6 +639,7 @@
 				6621CA5AB2ADAA3126CC42D41FFAE001 /* SSLSecurity.swift */,
 				A703816064A4B8BEC7710E06F97C3A09 /* Support Files */,
 			);
+			name = "Socket.IO-Client-Swift";
 			path = "Socket.IO-Client-Swift";
 			sourceTree = "<group>";
 		};
@@ -779,6 +781,7 @@
 				6420644F259748CF31AED820A47FA537 /* WKTParser.swift */,
 				0C3F12C53B490340EFA0F7FB375ED7DB /* Support Files */,
 			);
+			name = BackendlessSwift;
 			path = BackendlessSwift;
 			sourceTree = "<group>";
 		};
@@ -849,6 +852,7 @@
 				06BBA14C80A163695A162A157455FB69 /* Validation.swift */,
 				977F425FC87D79FB85D9724722CE02A2 /* Support Files */,
 			);
+			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -1367,7 +1371,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/BackendlessSwift/BackendlessSwift-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/BackendlessSwift/BackendlessSwift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1400,7 +1404,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Socket.IO-Client-Swift/Socket.IO-Client-Swift-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Socket.IO-Client-Swift/Socket.IO-Client-Swift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1433,7 +1437,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Starscream/Starscream-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Starscream/Starscream-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1468,7 +1472,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Starscream/Starscream-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Starscream/Starscream-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1703,7 +1707,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Socket.IO-Client-Swift/Socket.IO-Client-Swift-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Socket.IO-Client-Swift/Socket.IO-Client-Swift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1775,7 +1779,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/BackendlessSwift/BackendlessSwift-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/BackendlessSwift/BackendlessSwift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

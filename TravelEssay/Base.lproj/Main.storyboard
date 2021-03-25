@@ -163,9 +163,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JGq-VN-Lf8" userLabel="UpperView">
-                                <rect key="frame" x="0.0" y="88" width="390" height="361"/>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="58S-RU-jTz" userLabel="LowerView">
                                 <rect key="frame" x="0.0" y="449" width="390" height="361"/>
                                 <subviews>
@@ -186,6 +183,9 @@
                                                 <integer key="value" value="14"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="signUpButtonPressed:" destination="sGH-7g-eyv" eventType="touchUpInside" id="i6c-KM-XlW"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -195,21 +195,115 @@
                                     <constraint firstItem="QEb-VP-UoH" firstAttribute="top" secondItem="58S-RU-jTz" secondAttribute="top" constant="8" id="Q3K-Z0-73W"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jzx-2x-37J" userLabel="UpperView">
+                                <rect key="frame" x="0.0" y="88" width="390" height="361"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tpx-6b-9kn">
+                                        <rect key="frame" x="25" y="126" width="340" height="227"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rnM-f2-pDq">
+                                                <rect key="frame" x="0.0" y="0.0" width="340" height="70.333333333333329"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UserID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gXA-QZ-B0v">
+                                                        <rect key="frame" x="0.0" y="0.0" width="340" height="48"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="48" id="Qhz-tW-Ceb"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="19"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아이디가 입력되지 않았습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vcr-Ib-2IA">
+                                                        <rect key="frame" x="0.0" y="56" width="340" height="14.333333333333329"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DKi-qx-nXF">
+                                                <rect key="frame" x="0.0" y="78.333333333333314" width="340" height="70.333333333333314"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jdq-zo-PPH">
+                                                        <rect key="frame" x="0.0" y="0.0" width="340" height="48"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="48" id="C5c-vl-Ya6"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="19"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호가 입력되지 않았습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dt2-eS-pZO">
+                                                        <rect key="frame" x="0.0" y="56" width="340" height="14.333333333333329"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nmL-R2-Khg">
+                                                <rect key="frame" x="0.0" y="156.66666666666669" width="340" height="70.333333333333314"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j83-H2-nX0">
+                                                        <rect key="frame" x="0.0" y="0.0" width="340" height="48"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="48" id="A9l-B0-YJh"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="19"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 확인이 입력되지 않았습니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7S-yk-8He">
+                                                        <rect key="frame" x="0.0" y="56" width="340" height="14.333333333333329"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="nmL-R2-Khg" firstAttribute="top" secondItem="DKi-qx-nXF" secondAttribute="bottom" constant="8" symbolic="YES" id="56c-dz-WZD"/>
+                                            <constraint firstItem="nmL-R2-Khg" firstAttribute="leading" secondItem="tpx-6b-9kn" secondAttribute="leading" id="BUM-qw-0zY"/>
+                                            <constraint firstAttribute="trailing" secondItem="rnM-f2-pDq" secondAttribute="trailing" id="IU8-vY-24o"/>
+                                            <constraint firstItem="DKi-qx-nXF" firstAttribute="top" secondItem="rnM-f2-pDq" secondAttribute="bottom" constant="8" id="STb-xD-C5Q"/>
+                                            <constraint firstItem="rnM-f2-pDq" firstAttribute="leading" secondItem="tpx-6b-9kn" secondAttribute="leading" id="Vxw-ZC-mel"/>
+                                            <constraint firstAttribute="bottom" secondItem="nmL-R2-Khg" secondAttribute="bottom" id="ZnR-ND-x2O"/>
+                                            <constraint firstItem="DKi-qx-nXF" firstAttribute="leading" secondItem="tpx-6b-9kn" secondAttribute="leading" id="aYC-00-fUc"/>
+                                            <constraint firstAttribute="trailing" secondItem="nmL-R2-Khg" secondAttribute="trailing" id="hdV-NS-CKD"/>
+                                            <constraint firstAttribute="trailing" secondItem="DKi-qx-nXF" secondAttribute="trailing" id="qXM-gy-XqD"/>
+                                            <constraint firstItem="rnM-f2-pDq" firstAttribute="top" secondItem="tpx-6b-9kn" secondAttribute="top" id="sXf-MK-Dh1"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="tpx-6b-9kn" firstAttribute="leading" secondItem="jzx-2x-37J" secondAttribute="leading" constant="25" id="Lea-S9-8FV"/>
+                                    <constraint firstAttribute="bottom" secondItem="tpx-6b-9kn" secondAttribute="bottom" constant="8" id="dQM-7l-Wjf"/>
+                                    <constraint firstAttribute="trailing" secondItem="tpx-6b-9kn" secondAttribute="trailing" constant="25" id="eex-KU-pDR"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="umd-jV-7TJ"/>
                         <color key="backgroundColor" red="0.30988144870000001" green="0.78913480039999995" blue="0.51261025670000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="JGq-VN-Lf8" firstAttribute="trailing" secondItem="umd-jV-7TJ" secondAttribute="trailing" id="1nT-aN-zi9"/>
-                            <constraint firstItem="JGq-VN-Lf8" firstAttribute="leading" secondItem="umd-jV-7TJ" secondAttribute="leading" id="2bi-4m-0sc"/>
-                            <constraint firstItem="JGq-VN-Lf8" firstAttribute="height" secondItem="umd-jV-7TJ" secondAttribute="height" multiplier="0.5" id="9O8-Cu-biy"/>
+                            <constraint firstItem="jzx-2x-37J" firstAttribute="height" secondItem="umd-jV-7TJ" secondAttribute="height" multiplier="0.5" id="0M7-Qq-IdM"/>
                             <constraint firstItem="58S-RU-jTz" firstAttribute="bottom" secondItem="umd-jV-7TJ" secondAttribute="bottom" id="Abi-xk-UiT"/>
+                            <constraint firstItem="58S-RU-jTz" firstAttribute="trailing" secondItem="umd-jV-7TJ" secondAttribute="trailing" id="Kuz-Tn-ocu"/>
                             <constraint firstItem="58S-RU-jTz" firstAttribute="height" secondItem="umd-jV-7TJ" secondAttribute="height" multiplier="0.5" id="Mk8-LU-mAq"/>
-                            <constraint firstItem="JGq-VN-Lf8" firstAttribute="leading" secondItem="58S-RU-jTz" secondAttribute="leading" id="aqn-Kn-j6e"/>
-                            <constraint firstItem="JGq-VN-Lf8" firstAttribute="trailing" secondItem="58S-RU-jTz" secondAttribute="trailing" id="jYj-g5-HzP"/>
-                            <constraint firstItem="58S-RU-jTz" firstAttribute="top" secondItem="JGq-VN-Lf8" secondAttribute="bottom" id="t02-mV-cK7"/>
+                            <constraint firstItem="58S-RU-jTz" firstAttribute="top" secondItem="jzx-2x-37J" secondAttribute="bottom" id="TeQ-HJ-Ymy"/>
+                            <constraint firstItem="jzx-2x-37J" firstAttribute="trailing" secondItem="umd-jV-7TJ" secondAttribute="trailing" id="W64-8U-0Qg"/>
+                            <constraint firstItem="58S-RU-jTz" firstAttribute="leading" secondItem="umd-jV-7TJ" secondAttribute="leading" id="bcg-7k-xeS"/>
+                            <constraint firstItem="jzx-2x-37J" firstAttribute="top" secondItem="umd-jV-7TJ" secondAttribute="top" id="hhQ-v4-IsT"/>
+                            <constraint firstItem="jzx-2x-37J" firstAttribute="leading" secondItem="umd-jV-7TJ" secondAttribute="leading" id="jn9-T0-CpQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IiW-aE-icY"/>
+                    <connections>
+                        <outlet property="cfPwErrorLabel" destination="K7S-yk-8He" id="EvM-dT-wxD"/>
+                        <outlet property="cfPwTextField" destination="j83-H2-nX0" id="Aqa-s8-pFA"/>
+                        <outlet property="idErrorLabel" destination="vcr-Ib-2IA" id="FYq-tX-3vf"/>
+                        <outlet property="idTextField" destination="gXA-QZ-B0v" id="8Up-Df-PYR"/>
+                        <outlet property="pwErrorLabel" destination="dt2-eS-pZO" id="hem-Hj-tk5"/>
+                        <outlet property="pwTextField" destination="Jdq-zo-PPH" id="wPv-g3-GR5"/>
+                        <segue destination="mqC-zj-Xi1" kind="show" identifier="signUpSucceed" id="OJt-TE-Lor"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f8a-qI-NiH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -226,16 +320,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1pG-Tg-nYh" userLabel="UpperView">
                                 <rect key="frame" x="0.0" y="88" width="390" height="361"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msj-vE-div">
-                                        <rect key="frame" x="276" y="315" width="89" height="30"/>
-                                        <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="15"/>
-                                        <state key="normal" title="비밀번호 찾기">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="EEV-BX-XOA" kind="show" id="llC-5I-mJK"/>
-                                        </connections>
-                                    </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9dp-qI-eJK">
                                         <rect key="frame" x="25" y="166.33333333333337" width="340" height="148.66666666666663"/>
                                         <subviews>
@@ -288,12 +372,23 @@
                                             <constraint firstAttribute="bottom" secondItem="bKs-JB-rGj" secondAttribute="bottom" id="wNp-An-QaA"/>
                                         </constraints>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msj-vE-div">
+                                        <rect key="frame" x="200" y="315" width="165" height="30"/>
+                                        <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="15"/>
+                                        <state key="normal" title="비밀번호 찾기">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="EEV-BX-XOA" kind="show" id="llC-5I-mJK"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="9dp-qI-eJK" secondAttribute="trailing" constant="25" id="0rC-fw-p9S"/>
                                     <constraint firstItem="msj-vE-div" firstAttribute="trailing" secondItem="9dp-qI-eJK" secondAttribute="trailing" id="AMH-4H-ZVT"/>
                                     <constraint firstItem="9dp-qI-eJK" firstAttribute="leading" secondItem="1pG-Tg-nYh" secondAttribute="leading" constant="25" id="Lzu-4a-sxs"/>
                                     <constraint firstItem="msj-vE-div" firstAttribute="top" secondItem="9dp-qI-eJK" secondAttribute="bottom" id="RbZ-d3-vhh"/>
+                                    <constraint firstItem="msj-vE-div" firstAttribute="leading" relation="lessThanOrEqual" secondItem="1pG-Tg-nYh" secondAttribute="leading" constant="200" id="eUI-8E-D5y"/>
                                     <constraint firstAttribute="bottom" secondItem="msj-vE-div" secondAttribute="bottom" constant="16" id="zle-zJ-cx6"/>
                                 </constraints>
                             </view>
@@ -504,6 +599,9 @@
             <point key="canvasLocation" x="-146.37681159420291" y="84.375"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="OJt-TE-Lor"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Info" width="6" height="6"/>
         <systemColor name="systemBackgroundColor">

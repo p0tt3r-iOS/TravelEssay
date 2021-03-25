@@ -15,7 +15,7 @@
 		BC8791792608748E000F8F10 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8791782608748E000F8F10 /* LoginViewModel.swift */; };
 		BC92CF8726059A1E00CAC81A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC92CF8626059A1E00CAC81A /* SignUpViewController.swift */; };
 		BC99AB7E260AF16100DAA1AB /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC99AB7D260AF16100DAA1AB /* SignUpViewModel.swift */; };
-		BC99AB81260AF8F900DAA1AB /* FindPWViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC99AB80260AF8F900DAA1AB /* FindPWViewModel.swift */; };
+		BC99AB81260AF8F900DAA1AB /* FindPwViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC99AB80260AF8F900DAA1AB /* FindPwViewModel.swift */; };
 		BC99AB84260B02FA00DAA1AB /* UIVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC99AB83260B02FA00DAA1AB /* UIVIewController.swift */; };
 		BCAAB76026047AA50080F080 /* NanumGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCAAB75C26047A880080F080 /* NanumGothic.ttf */; };
 		BCAAB76126047AA50080F080 /* NanumSquareBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCAAB75D26047A890080F080 /* NanumSquareBold.ttf */; };
@@ -43,7 +43,7 @@
 		BC8791782608748E000F8F10 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		BC92CF8626059A1E00CAC81A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		BC99AB7D260AF16100DAA1AB /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
-		BC99AB80260AF8F900DAA1AB /* FindPWViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPWViewModel.swift; sourceTree = "<group>"; };
+		BC99AB80260AF8F900DAA1AB /* FindPwViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPwViewModel.swift; sourceTree = "<group>"; };
 		BC99AB83260B02FA00DAA1AB /* UIVIewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIewController.swift; sourceTree = "<group>"; };
 		BCAAB75C26047A880080F080 /* NanumGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothic.ttf; sourceTree = "<group>"; };
 		BCAAB75D26047A890080F080 /* NanumSquareBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareBold.ttf; sourceTree = "<group>"; };
@@ -86,7 +86,7 @@
 			children = (
 				BC8791782608748E000F8F10 /* LoginViewModel.swift */,
 				BC99AB7D260AF16100DAA1AB /* SignUpViewModel.swift */,
-				BC99AB80260AF8F900DAA1AB /* FindPWViewModel.swift */,
+				BC99AB80260AF8F900DAA1AB /* FindPwViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -189,7 +189,7 @@
 				BCD35AA02602FA3300A06BCF /* Sources */,
 				BCD35AA12602FA3300A06BCF /* Frameworks */,
 				BCD35AA22602FA3300A06BCF /* Resources */,
-				82C6E80F95C24471894C8741 /* [CP] Embed Pods Frameworks */,
+				5B696400788F06C0B22F9A07 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -249,7 +249,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		82C6E80F95C24471894C8741 /* [CP] Embed Pods Frameworks */ = {
+		5B696400788F06C0B22F9A07 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -306,7 +306,7 @@
 				BC87914526084306000F8F10 /* RegisterModel.swift in Sources */,
 				BCD35AAA2602FA3300A06BCF /* SceneDelegate.swift in Sources */,
 				BC87914C26084F83000F8F10 /* Constant.swift in Sources */,
-				BC99AB81260AF8F900DAA1AB /* FindPWViewModel.swift in Sources */,
+				BC99AB81260AF8F900DAA1AB /* FindPwViewModel.swift in Sources */,
 				BC92CF8726059A1E00CAC81A /* SignUpViewController.swift in Sources */,
 				BC87914126083E42000F8F10 /* APIManager.swift in Sources */,
 				BC786585260993D600CCE4CE /* UITextField.swift in Sources */,
