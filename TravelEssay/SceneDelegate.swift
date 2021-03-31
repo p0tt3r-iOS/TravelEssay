@@ -17,7 +17,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         Thread.sleep(forTimeInterval: 3)
         
-        
 //         아래의 코드로 3초간 딜레이를 주면 status bar는 1초간 딜레이 후 표시됨
 //        window?.rootViewController = UIStoryboard(name: "LaunchScreen", bundle: nil).instantiateInitialViewController()
 //        window?.makeKeyAndVisible()

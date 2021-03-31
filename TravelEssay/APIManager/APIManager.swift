@@ -15,9 +15,7 @@ enum APIErrors: Error {
 
 typealias Handler = (Swift.Result<Any?, APIErrors>) -> Void
 
-
 class APIManager {
-    
     static let sharedInstance = APIManager()
     
     // MARK: - Calling Register API
@@ -58,7 +56,6 @@ class APIManager {
                         print(error.localizedDescription)
                         completionHandler(false, "NI")
                     }
-                    
                 }
             case .failure(let error):
                 print(error.localizedDescription)
@@ -69,11 +66,9 @@ class APIManager {
     
     // MARK: - Calling Login API
     func callingLoginAPI(login: LoginModel, completionHandler: @escaping Handler) {
-        
         let headers: HTTPHeaders = [.contentType("application/json")]
         
         AF.request(login_url, method: .post, parameters: login, encoder: JSONParameterEncoder.default, headers: headers).response { response in
-            
             print("Debug print as follow: ")
             debugPrint(response)
             
@@ -105,7 +100,6 @@ class APIManager {
                         completionHandler(.failure(.custom(message: "NP")))
                     }
                 }
-                
             case .failure(let error):
                 print("Hey Failed")
                 print(error.localizedDescription)
@@ -116,7 +110,6 @@ class APIManager {
     
     // MARK: - Send Set Password Again API Call
     func callingResetLoginAPI(id: String, completionHandler: @escaping (Bool, String) -> ()) {
-        
         AF.request("\(base_url)/restorepassword/\(id)", method: .get, parameters: nil, headers: nil).response { response in
             
             switch response.result {

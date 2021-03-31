@@ -28,6 +28,7 @@
 		BCD35AB42602FA3500A06BCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD35AB22602FA3500A06BCF /* LaunchScreen.storyboard */; };
 		BCD35ABD2602FA4400A06BCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCD35ABC2602FA4400A06BCF /* Assets.xcassets */; };
 		BCD35AC92603212900A06BCF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD35AC82603212900A06BCF /* LoginViewController.swift */; };
+		BCE1F598260ED0C2006568A2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCE1F597260ED0C2006568A2 /* GoogleService-Info.plist */; };
 		DE6D92C69F95778E32727315 /* Pods_TravelEssay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A67C53D0B229147C4CFA2D7D /* Pods_TravelEssay.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		BCD35ABC2602FA4400A06BCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../Travelogue/TravelogueStudy/Assets.xcassets; sourceTree = "<group>"; };
 		BCD35AC02602FA5200A06BCF /* Font */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Font; sourceTree = "<group>"; };
 		BCD35AC82603212900A06BCF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BCE1F597260ED0C2006568A2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				BCD35ABC2602FA4400A06BCF /* Assets.xcassets */,
 				BCD35AB22602FA3500A06BCF /* LaunchScreen.storyboard */,
 				BCD35AB52602FA3500A06BCF /* Info.plist */,
+				BCE1F597260ED0C2006568A2 /* GoogleService-Info.plist */,
 				BCAAB75C26047A880080F080 /* NanumGothic.ttf */,
 				BCAAB75D26047A890080F080 /* NanumSquareBold.ttf */,
 				BCAAB75F26047A950080F080 /* NanumSquareRegular.ttf */,
@@ -243,6 +246,7 @@
 				BCD35AB42602FA3500A06BCF /* LaunchScreen.storyboard in Resources */,
 				BCD35ABD2602FA4400A06BCF /* Assets.xcassets in Resources */,
 				BCD35AAF2602FA3300A06BCF /* Main.storyboard in Resources */,
+				BCE1F598260ED0C2006568A2 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

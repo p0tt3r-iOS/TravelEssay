@@ -7,6 +7,7 @@ target 'TravelEssay' do
   
   # Pods for TravelEssay
   pod 'Alamofire', '~> 5.2'
-  pod 'BackendlessSwift'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
   
 end

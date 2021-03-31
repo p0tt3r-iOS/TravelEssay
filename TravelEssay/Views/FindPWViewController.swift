@@ -23,7 +23,6 @@ class FindPWViewController: UIViewController {
     }
     
     @IBAction func findPWButtonPressed(_ sender: UIButton) {
-        
         guard let username = idTextField?.text else { return }
         
         if username.count == 0 {
