@@ -8,7 +8,6 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    
     // MARK: - Methods
     func setUI() {
         // Status Bar가 흰색으로 표시됨

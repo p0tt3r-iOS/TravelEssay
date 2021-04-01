@@ -8,7 +8,6 @@
 import UIKit
 
 class FindPWViewController: UIViewController {
-    
     // MARK: - Properties
     let findPWViewModel = FindPwViewModel()
 

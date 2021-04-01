@@ -7,6 +7,7 @@
 
 import UIKit
 
+// MARK: - UITextField
 extension UITextField {
     func underlined(placeholder: String, fieldColor: UIColor = UIColor.white) {
         
@@ -22,5 +23,18 @@ extension UITextField {
         textColor = UIColor.white
         
         attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: fieldColor])
+    }
+}
+
+extension UIViewController {
+    
+    func makeAlert(title: String, message: String, buttonText: String = "확인", handler: ((UIAlertAction) -> Void)? = nil) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: buttonText, style: .default, handler: handler)
+        
+        alert.addAction(action)
+        
+        present(alert, animated: true, completion: nil)
     }
 }

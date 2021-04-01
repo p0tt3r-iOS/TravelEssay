@@ -8,94 +8,58 @@
 import UIKit
 
 class SignUpViewController: UIViewController {
-    
     // MARK: - Properties
     let signUpViewModel = SignUpViewModel()
     
     // MARK: - IBOutlets
-    @IBOutlet weak var idTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var pwTextField: UITextField!
     @IBOutlet weak var cfPwTextField: UITextField!
-    @IBOutlet weak var idErrorLabel: UILabel!
-    @IBOutlet weak var pwErrorLabel: UILabel!
-    @IBOutlet weak var cfPwErrorLabel: UILabel!
     
     // MARK: - Methods
     func setUI() {
-        idTextField.underlined(placeholder: "UserID")
+        emailTextField.underlined(placeholder: "Email")
         pwTextField.underlined(placeholder: "Password")
         cfPwTextField.underlined(placeholder: "Confirm Password")
-        idErrorLabel.textColor = .clear
-        pwErrorLabel.textColor = .clear
-        cfPwErrorLabel.textColor = .clear
     }
     
     func checkTextField() -> Bool {
-        
-        var pass = true
-        
-        if (idTextField.text?.count ?? 0) == 0 {
-            idErrorLabel.text = "아이디가 입력되지 않았습니다."
-            idErrorLabel.textColor = .red
-            pass = false
+        if (emailTextField.text?.count ?? 0) == 0 {
+            makeAlert(title: "에러", message: "이메일이 입력되지 않았습니다.")
+            return false
         }
         
         if (pwTextField.text?.count ?? 0) == 0 {
-            pwErrorLabel.text = "비밀번호가 입력되지 않았습니다."
-            pwErrorLabel.textColor = .red
-            pass = false
+            makeAlert(title: "에러", message: "비밀번호가 입력되지 않았습니다.")
+            return false
         }
         
-        if (cfPwTextField.text?.count ?? 0) == 0 {
-            cfPwErrorLabel.text = "비밀번호 확인이 입력되지 않았습니다."
-            cfPwErrorLabel.textColor = .red
-            pass = false
-        }
-        
-        return pass
+        return true
     }
     
     func checkPassword() -> Bool {
         
         if pwTextField.text != cfPwTextField.text {
-            cfPwErrorLabel.text = "비밀번호가 일치하지 않습니다."
-            
+            makeAlert(title: "에러", message: "비밀번호가 일치하지 않습니다.")
             return false
         }
+        
         return true
-    }
-    
-    func dismissErrorLabel() {
-        idErrorLabel.textColor = .clear
-        pwErrorLabel.textColor = .clear
-        cfPwErrorLabel.textColor = .clear
     }
     
     // MARK: - IBActions
     @IBAction func signUpButtonPressed(_ sender: UIButton) {
+        guard checkTextField() else { return }
+        guard checkPassword() else { return }
         
-        dismissErrorLabel()
-        
-        let validTextField = checkTextField()
-        let samenessOfPassword = checkPassword()
-        
-        if !validTextField {
-            return
-        }
-        
-        if !samenessOfPassword {
-            return
-        }
-        
-        signUpViewModel.trySignUp(username: self.idTextField.text!, password: self.pwTextField.text!) { success in
-            if success {
-                self.performSegue(withIdentifier: "signUpSucceed", sender: self)
-            } else {
-                self.cfPwErrorLabel.text = self.signUpViewModel.errorMessage
-                self.cfPwErrorLabel.textColor = .red
+        signUpViewModel.createUser(email: self.emailTextField.text!, password: self.pwTextField.text!) { result, error in
+            guard error == nil else {
+                self.makeAlert(title: "에러", message: error!)
+                return
             }
+            
+            self.performSegue(withIdentifier: "signUpSucceed", sender: self)
         }
-
     }
     
     // MARK: - Life Cycles
@@ -105,10 +69,33 @@ class SignUpViewController: UIViewController {
         title = "회원가입"
         setUI()
     }
+}
+
+// MARK: - Text Field Delegate Methods
+extension SignUpViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if emailTextField.isFirstResponder, pwTextField.text!.isEmpty {
+            pwTextField.becomeFirstResponder()
+        } else if cfPwTextField.text!.isEmpty {
+            cfPwTextField.becomeFirstResponder()
+        } else {
+            if emailTextField.isFirstResponder {
+                emailTextField.resignFirstResponder()
+            } else if pwTextField.isFirstResponder {
+                pwTextField.resignFirstResponder()
+            } else {
+                cfPwTextField.resignFirstResponder()
+            }
+            
+        }
+        return true
+    }
     
-
- 
-
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // 뷰에서 터치가 발생하면 End Editing(키보드가 내려감)
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
 }
 
 
