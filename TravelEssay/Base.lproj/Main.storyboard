@@ -104,7 +104,7 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Info" translatesAutoresizingMaskIntoConstraints="NO" id="LXA-Fa-wXa">
-                                        <rect key="frame" x="24.333333333333314" y="134" width="18" height="18"/>
+                                        <rect key="frame" x="24.333333333333329" y="134" width="18" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="LXA-Fa-wXa" secondAttribute="height" multiplier="1:1" id="G30-11-blU"/>
                                             <constraint firstAttribute="width" constant="18" id="K4s-RA-jJJ"/>
@@ -383,10 +383,33 @@
                                             <action selector="loginButtonPressed:" destination="PLt-WR-i3x" eventType="touchUpInside" id="h8k-VV-IG0"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p2s-4s-V3i">
+                                        <rect key="frame" x="25" y="63" width="340" height="47"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="47" id="Yqp-fH-7rI"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="340" id="ebW-a3-2rE"/>
+                                        </constraints>
+                                        <state key="normal" title=" Sign in with Google" image="Google">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="14"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="signInGoogleButtonPressed:" destination="PLt-WR-i3x" eventType="touchUpInside" id="VS2-v2-qcZ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="ISj-0Y-GqQ" firstAttribute="centerX" secondItem="Yvn-TS-kDg" secondAttribute="centerX" id="17j-cu-5a5"/>
+                                    <constraint firstItem="p2s-4s-V3i" firstAttribute="top" secondItem="ISj-0Y-GqQ" secondAttribute="bottom" constant="8" id="Dv4-yO-fay"/>
+                                    <constraint firstItem="p2s-4s-V3i" firstAttribute="trailing" secondItem="ISj-0Y-GqQ" secondAttribute="trailing" id="TO2-KX-xiZ"/>
                                     <constraint firstItem="ISj-0Y-GqQ" firstAttribute="top" secondItem="Yvn-TS-kDg" secondAttribute="top" constant="8" id="nNy-Xm-S1p"/>
+                                    <constraint firstItem="p2s-4s-V3i" firstAttribute="leading" secondItem="ISj-0Y-GqQ" secondAttribute="leading" id="zYP-Z4-Ier"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -566,6 +589,7 @@
         <segue reference="llX-vQ-Pri"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="Google" width="24" height="24"/>
         <image name="Info" width="6" height="6"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

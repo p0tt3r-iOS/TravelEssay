@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
 
 class LoginViewController: UIViewController {
     // MARK: - Properties
@@ -26,6 +28,9 @@ class LoginViewController: UIViewController {
             self.performSegue(withIdentifier: "LoginSucceed", sender: self)
         }
     }
+    @IBAction func signInGoogleButtonPressed(_ sender: UIButton) {
+        googleLogin()
+    }
     
     // MARK: - Methods
     func setUI() {
@@ -37,6 +42,17 @@ class LoginViewController: UIViewController {
     func setDelegate() {
         emailTextField.delegate = self
         pwTextField.delegate = self
+    }
+    
+    
+    func googleLogin() {
+        // Configure the Google Sign In instance
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()!.options.clientID
+        GIDSignIn.sharedInstance().delegate = self
+        
+        // Start the sign in flow
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance()?.signIn()
     }
     
     // MARK: - Life Cycles
@@ -76,3 +92,19 @@ extension LoginViewController: UITextFieldDelegate {
     }
 }
 
+extension LoginViewController: GIDSignInDelegate {
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        guard error == nil else { return }
+        
+        guard let authentication = user.authentication else { return }
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                       accessToken: authentication.accessToken)
+        Auth.auth().signIn(with: credential) { result, error in
+            guard error == nil else {
+                self.makeAlert(title: "에러", message: (error?.localizedDescription)!)
+                return
+            }
+            self.performSegue(withIdentifier: "LoginSucceed", sender: self)
+        }
+    }
+}

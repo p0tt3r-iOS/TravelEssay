@@ -7,7 +7,12 @@ target 'TravelEssay' do
   
   # Pods for TravelEssay
   pod 'Alamofire', '~> 5.2'
+  
+  ## Firebase 🔥 pods
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+  
+  ## Pod for Sign in with Google
+  pod 'GoogleSignIn'
   
 end
