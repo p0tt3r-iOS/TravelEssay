@@ -443,10 +443,10 @@
             </objects>
             <point key="canvasLocation" x="2051" y="84"/>
         </scene>
-        <!--FindPW View Controller-->
+        <!--ResetPW View Controller-->
         <scene sceneID="YCM-Aw-vn1">
             <objects>
-                <viewController id="EEV-BX-XOA" customClass="FindPWViewController" customModule="TravelEssay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="EEV-BX-XOA" customClass="ResetPWViewController" customModule="TravelEssay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EJf-5w-AVi">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -464,9 +464,6 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="NanumGothic" family="NanumGothic" pointSize="19"/>
                                                 <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <action selector="idTextFieldEditingDidBegin:" destination="EEV-BX-XOA" eventType="editingDidBegin" id="Fpm-PP-xzb"/>
-                                                </connections>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -529,7 +526,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="eOK-it-cvT"/>
                     <connections>
-                        <outlet property="idTextField" destination="s0a-HU-8Iz" id="p6t-wc-rOT"/>
+                        <outlet property="emailTextField" destination="s0a-HU-8Iz" id="p6t-wc-rOT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HEh-Ze-b2C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

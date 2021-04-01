@@ -28,7 +28,6 @@ class SignUpViewController: UIViewController {
             makeAlert(title: "에러", message: "이메일이 입력되지 않았습니다.")
             return false
         }
-        
         if (pwTextField.text?.count ?? 0) == 0 {
             makeAlert(title: "에러", message: "비밀번호가 입력되지 않았습니다.")
             return false
@@ -38,7 +37,6 @@ class SignUpViewController: UIViewController {
     }
     
     func checkPassword() -> Bool {
-        
         if pwTextField.text != cfPwTextField.text {
             makeAlert(title: "에러", message: "비밀번호가 일치하지 않습니다.")
             return false

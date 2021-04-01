@@ -7,9 +7,9 @@
 
 import UIKit
 
-class FindPWViewController: UIViewController {
+class ResetPWViewController: UIViewController {
     // MARK: - Properties
-    let findPWViewModel = FindPwViewModel()
+    let findPWViewModel = ResetPwViewModel()
 
     // MARK: - IBOutlets
     @IBOutlet weak var idTextField: UITextField!
