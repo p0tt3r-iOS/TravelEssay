@@ -42,3 +42,11 @@ class ResetPWViewController: UIViewController {
         emailTextField.underlined(placeholder: "Email")
     }
 }
+
+// MARK: - Text Field Delegate Methods
+extension ResetPWViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}

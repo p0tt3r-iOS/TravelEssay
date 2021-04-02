@@ -6,30 +6,30 @@
 //
 
 import UIKit
+
 import Firebase
 import GoogleSignIn
 
 class LoginViewController: UIViewController {
     // MARK: - Properties
-    let loginViewModel = LoginViewModel()
+    let vm = LoginViewModel()
 
     // MARK: - IBOutlets
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var pwTextField: UITextField!
+    @IBOutlet weak var signInGoogleButton: UIButton!
     
     // MARK: - IBActions
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        loginViewModel.login(with: emailTextField.text!, password: pwTextField.text!) { result, error in
-            guard error == nil else {
-                self.makeAlert(title: "에러", message: error!)
-                return
-            }
-            
-            self.performSegue(withIdentifier: "LoginSucceed", sender: self)
-        }
+        vm.signInWithEmail(emailTextField.text!, password: pwTextField.text!)
     }
+    
     @IBAction func signInGoogleButtonPressed(_ sender: UIButton) {
         googleLogin()
+    }
+    
+    @IBAction func signInKakaoButtonPressed(_ sender: UIButton) {
+        vm.signInWithKakao()
     }
     
     // MARK: - Methods
@@ -42,6 +42,7 @@ class LoginViewController: UIViewController {
     func setDelegate() {
         emailTextField.delegate = self
         pwTextField.delegate = self
+        vm.delegate = self
     }
     
     
@@ -55,12 +56,20 @@ class LoginViewController: UIViewController {
         GIDSignIn.sharedInstance()?.signIn()
     }
     
+    func alignSignInLogo(of button: UIButton) {
+        button.imageView?.translatesAutoresizingMaskIntoConstraints = false
+        button.imageView?.leadingAnchor.constraint(equalTo: signInGoogleButton.leadingAnchor, constant: 24).isActive = true
+        button.imageView?.centerYAnchor.constraint(equalTo: signInGoogleButton.centerYAnchor).isActive = true
+    }
+    
     // MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUI()
         setDelegate()
+        
+        alignSignInLogo(of: signInGoogleButton)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,12 +84,13 @@ class LoginViewController: UIViewController {
 }
 
 // MARK: - Text Field Delegate Methods
+
 extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if emailTextField.isFirstResponder, pwTextField.text!.isEmpty {
             pwTextField.becomeFirstResponder()
         } else {
-            emailTextField.resignFirstResponder()
+            textField.resignFirstResponder()
         }
         return true
     }
@@ -92,19 +102,30 @@ extension LoginViewController: UITextFieldDelegate {
     }
 }
 
+// MARK: - GIDSignInDelegate Methods
+
 extension LoginViewController: GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        guard error == nil else { return }
+        guard error == nil else { return self.makeAlert(title: "에러", message: error.localizedDescription)}
         
-        guard let authentication = user.authentication else { return }
+        guard let authentication = user.authentication else { return self.makeAlert(title: "에러", message: error.localizedDescription)}
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                        accessToken: authentication.accessToken)
         Auth.auth().signIn(with: credential) { result, error in
-            guard error == nil else {
-                self.makeAlert(title: "에러", message: (error?.localizedDescription)!)
-                return
-            }
-            self.performSegue(withIdentifier: "LoginSucceed", sender: self)
+            guard error == nil else { return self.makeAlert(title: "에러", message: (error?.localizedDescription)!) }
+            self.loginSucceed()
         }
+    }
+}
+
+// MARK: - LoginDelegate Method
+
+extension LoginViewController: LoginDelegate {
+    func loginSucceed() {
+        self.performSegue(withIdentifier: "LoginSucceed", sender: self)
+    }
+    
+    func loginFailed(error: Error) {
+        makeAlert(title: "로그인 실패", message: error.localizedDescription)
     }
 }

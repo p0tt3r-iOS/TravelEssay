@@ -15,4 +15,9 @@ target 'TravelEssay' do
   ## Pod for Sign in with Google
   pod 'GoogleSignIn'
   
+  ## Pod for Sign in with KakaoTalk
+  pod 'KakaoSDKCommon'
+  pod 'KakaoSDKAuth'
+  pod 'KakaoSDKUser'
+  
 end

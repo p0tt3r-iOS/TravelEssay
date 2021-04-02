@@ -37,4 +37,11 @@ extension UIViewController {
         
         present(alert, animated: true, completion: nil)
     }
+    
+    open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // 뷰에서 터치가 발생하면 End Editing(키보드가 내려감)
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
 }
+
