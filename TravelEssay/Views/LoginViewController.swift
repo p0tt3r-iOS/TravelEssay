@@ -9,6 +9,8 @@ import UIKit
 
 import Firebase
 import GoogleSignIn
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
     // MARK: - Properties
@@ -37,6 +39,7 @@ class LoginViewController: UIViewController {
         // 밑줄만 남기고 텍스트 필드 출력
         emailTextField.underlined(placeholder: "Email")
         pwTextField.underlined(placeholder: "Password")
+        addFacebookLoginButton()
     }
     
     func setDelegate() {
@@ -44,7 +47,7 @@ class LoginViewController: UIViewController {
         pwTextField.delegate = self
         vm.delegate = self
     }
-    
+
     
     func googleLogin() {
         // Configure the Google Sign In instance
@@ -115,6 +118,41 @@ extension LoginViewController: GIDSignInDelegate {
             guard error == nil else { return self.makeAlert(title: "에러", message: (error?.localizedDescription)!) }
             self.loginSucceed()
         }
+    }
+}
+
+// MARK: - Section Heading
+
+extension LoginViewController: LoginButtonDelegate {
+    func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
+        guard error == nil else {
+            loginFailed(error: error!)
+            return
+        }
+        
+        let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
+        
+        vm.signInWithFacebook(with: credential)
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
+    }
+    
+    
+    func addFacebookLoginButton() {
+        let loginButton = FBLoginButton()
+        loginButton.layer.cornerRadius = 14
+        loginButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(loginButton)
+        
+        loginButton.delegate = self
+        
+        NSLayoutConstraint.activate([
+            loginButton.topAnchor.constraint(equalTo: signInGoogleButton.bottomAnchor, constant: 63),
+            loginButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            loginButton.heightAnchor.constraint(equalToConstant: 47),
+            loginButton.widthAnchor.constraint(equalTo: signInGoogleButton.widthAnchor)
+        ])
     }
 }
 

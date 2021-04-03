@@ -28,6 +28,17 @@ class LoginViewModel {
         }
     }
     
+    // MARK: - Facebook with Firebase
+    
+    func signInWithFacebook(with credential: AuthCredential) {
+        Auth.auth().signIn(with: credential) { authResult, error in
+            guard error == nil else { self.delegate?.loginFailed(error: error!)
+                return
+            }
+            self.delegate?.loginSucceed()
+        }
+    }
+    
     // MARK: - Kakao
     
     func signInWithKakao() {
@@ -38,7 +49,9 @@ class LoginViewModel {
                     self.delegate?.loginFailed(error: error!)
                     return
                 }
-                self.customAuthLogin(token: oauthToken!.accessToken)
+                self.delegate?.loginSucceed()
+//                self.customAuthLogin(token: oauthToken!.accessToken)
+//                커스텀 토큰 로그인 시도(JWT토큰 없이는 불가)
             }
         } else {
             UserApi.shared.loginWithKakaoAccount { oauthToken, error in
@@ -46,7 +59,9 @@ class LoginViewModel {
                     self.delegate?.loginFailed(error: error!)
                     return
                 }
-                self.customAuthLogin(token: oauthToken!.accessToken)
+                self.delegate?.loginSucceed()
+//                self.customAuthLogin(token: oauthToken!.accessToken)
+//                커스텀 토큰 로그인 시도(JWT토큰 없이는 불가)
             }
         }
     }
