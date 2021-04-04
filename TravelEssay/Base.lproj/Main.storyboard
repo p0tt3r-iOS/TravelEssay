@@ -363,7 +363,7 @@
                                 <rect key="frame" x="0.0" y="449" width="390" height="361"/>
                                 <subviews>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISj-0Y-GqQ">
-                                        <rect key="frame" x="25" y="8" width="340" height="47"/>
+                                        <rect key="frame" x="24" y="8" width="342" height="47"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="47" id="eRf-b9-9l1"/>
@@ -384,7 +384,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p2s-4s-V3i">
-                                        <rect key="frame" x="25" y="63" width="340" height="47"/>
+                                        <rect key="frame" x="24" y="63" width="342" height="47"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="47" id="Yqp-fH-7rI"/>
@@ -404,7 +404,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uBb-vO-qkn">
-                                        <rect key="frame" x="25" y="118" width="340" height="47"/>
+                                        <rect key="frame" x="24" y="118" width="342" height="47"/>
                                         <color key="backgroundColor" red="0.99248307940000002" green="0.89676803350000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="340" id="5IB-J8-tkq"/>
@@ -424,21 +424,56 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Kakao" translatesAutoresizingMaskIntoConstraints="NO" id="Y13-Vj-hkF">
-                                        <rect key="frame" x="25" y="118" width="340" height="47"/>
+                                        <rect key="frame" x="24" y="118" width="342" height="47"/>
+                                    </imageView>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1UI-1N-BtI">
+                                        <rect key="frame" x="24" y="173" width="342" height="47"/>
+                                        <color key="backgroundColor" red="0.11764705882352941" green="0.78431372549019607" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="47" id="e8o-Iw-jfu"/>
+                                        </constraints>
+                                        <state key="normal" title=" Sign in with Naver">
+                                            <color key="titleColor" red="0.1367869675" green="0.1332393885" blue="0.093415789309999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="14"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="signInNaverButtonPressed:" destination="PLt-WR-i3x" eventType="touchUpInside" id="cBj-qv-BuC"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Naver" translatesAutoresizingMaskIntoConstraints="NO" id="c7R-DL-w1N">
+                                        <rect key="frame" x="24" y="173" width="342" height="47"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="1UI-1N-BtI" firstAttribute="top" secondItem="uBb-vO-qkn" secondAttribute="bottom" constant="8" symbolic="YES" id="03J-Na-4oL"/>
                                     <constraint firstItem="ISj-0Y-GqQ" firstAttribute="centerX" secondItem="Yvn-TS-kDg" secondAttribute="centerX" id="17j-cu-5a5"/>
                                     <constraint firstItem="uBb-vO-qkn" firstAttribute="top" secondItem="p2s-4s-V3i" secondAttribute="bottom" constant="8" id="1Is-28-smo"/>
+                                    <constraint firstItem="1UI-1N-BtI" firstAttribute="bottom" secondItem="c7R-DL-w1N" secondAttribute="bottom" id="3s4-Zg-CuP"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ISj-0Y-GqQ" secondAttribute="trailing" constant="24" id="4NN-Nf-WMv"/>
                                     <constraint firstItem="Y13-Vj-hkF" firstAttribute="top" secondItem="uBb-vO-qkn" secondAttribute="top" id="5Sg-wa-st7"/>
+                                    <constraint firstItem="ISj-0Y-GqQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Yvn-TS-kDg" secondAttribute="leading" constant="24" id="84h-wv-FHg"/>
+                                    <constraint firstItem="1UI-1N-BtI" firstAttribute="trailing" secondItem="c7R-DL-w1N" secondAttribute="trailing" id="AgT-8t-g7J"/>
                                     <constraint firstItem="p2s-4s-V3i" firstAttribute="top" secondItem="ISj-0Y-GqQ" secondAttribute="bottom" constant="8" id="Dv4-yO-fay"/>
                                     <constraint firstItem="uBb-vO-qkn" firstAttribute="leading" secondItem="ISj-0Y-GqQ" secondAttribute="leading" id="GpR-Jb-7Wk"/>
+                                    <constraint firstItem="c7R-DL-w1N" firstAttribute="leading" secondItem="1UI-1N-BtI" secondAttribute="leading" id="JtP-X4-tro"/>
+                                    <constraint firstItem="1UI-1N-BtI" firstAttribute="top" secondItem="c7R-DL-w1N" secondAttribute="top" id="KhD-qc-8xG"/>
+                                    <constraint firstItem="c7R-DL-w1N" firstAttribute="bottom" secondItem="1UI-1N-BtI" secondAttribute="bottom" id="Lh9-LX-PTv"/>
+                                    <constraint firstItem="1UI-1N-BtI" firstAttribute="leading" secondItem="c7R-DL-w1N" secondAttribute="leading" id="M0e-Ug-O0M"/>
+                                    <constraint firstItem="1UI-1N-BtI" firstAttribute="trailing" secondItem="ISj-0Y-GqQ" secondAttribute="trailing" id="M8o-Gp-2h6"/>
                                     <constraint firstItem="p2s-4s-V3i" firstAttribute="trailing" secondItem="ISj-0Y-GqQ" secondAttribute="trailing" id="TO2-KX-xiZ"/>
+                                    <constraint firstItem="c7R-DL-w1N" firstAttribute="trailing" secondItem="1UI-1N-BtI" secondAttribute="trailing" id="aEd-wS-ZeE"/>
                                     <constraint firstItem="Y13-Vj-hkF" firstAttribute="bottom" secondItem="uBb-vO-qkn" secondAttribute="bottom" id="fMf-hN-5OM"/>
+                                    <constraint firstItem="c7R-DL-w1N" firstAttribute="top" secondItem="1UI-1N-BtI" secondAttribute="top" id="kGf-Py-pSd"/>
                                     <constraint firstItem="uBb-vO-qkn" firstAttribute="trailing" secondItem="ISj-0Y-GqQ" secondAttribute="trailing" id="mmL-Gv-hmj"/>
                                     <constraint firstItem="Y13-Vj-hkF" firstAttribute="leading" secondItem="uBb-vO-qkn" secondAttribute="leading" id="msl-AT-tXg"/>
                                     <constraint firstItem="ISj-0Y-GqQ" firstAttribute="top" secondItem="Yvn-TS-kDg" secondAttribute="top" constant="8" id="nNy-Xm-S1p"/>
                                     <constraint firstItem="Y13-Vj-hkF" firstAttribute="trailing" secondItem="uBb-vO-qkn" secondAttribute="trailing" id="q2q-rE-DhE"/>
+                                    <constraint firstItem="1UI-1N-BtI" firstAttribute="leading" secondItem="ISj-0Y-GqQ" secondAttribute="leading" id="yxs-Vg-XIF"/>
                                     <constraint firstItem="p2s-4s-V3i" firstAttribute="leading" secondItem="ISj-0Y-GqQ" secondAttribute="leading" id="zYP-Z4-Ier"/>
                                 </constraints>
                             </view>
@@ -462,6 +497,7 @@
                         <outlet property="emailTextField" destination="ovs-cz-R2V" id="ayg-m1-AdU"/>
                         <outlet property="pwTextField" destination="ybF-n3-Qkw" id="UXG-9x-C9R"/>
                         <outlet property="signInGoogleButton" destination="p2s-4s-V3i" id="1Hi-ac-l51"/>
+                        <outlet property="signInNaverButton" destination="1UI-1N-BtI" id="N4f-m4-5jM"/>
                         <segue destination="mqC-zj-Xi1" kind="show" identifier="LoginSucceed" id="llX-vQ-Pri"/>
                     </connections>
                 </viewController>
@@ -623,6 +659,7 @@
         <image name="Google" width="24" height="24"/>
         <image name="Info" width="6" height="6"/>
         <image name="Kakao" width="300" height="45"/>
+        <image name="Naver" width="562.5" height="125"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

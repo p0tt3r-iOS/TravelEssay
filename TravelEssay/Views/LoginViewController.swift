@@ -11,15 +11,19 @@ import Firebase
 import GoogleSignIn
 import FBSDKCoreKit
 import FBSDKLoginKit
+import NaverThirdPartyLogin
 
 class LoginViewController: UIViewController {
     // MARK: - Properties
     let vm = LoginViewModel()
+    
+    let loginInstance = NaverThirdPartyLoginConnection.getSharedInstance()
 
     // MARK: - IBOutlets
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var pwTextField: UITextField!
     @IBOutlet weak var signInGoogleButton: UIButton!
+    @IBOutlet weak var signInNaverButton: UIButton!
     
     // MARK: - IBActions
     @IBAction func loginButtonPressed(_ sender: UIButton) {
@@ -34,6 +38,10 @@ class LoginViewController: UIViewController {
         vm.signInWithKakao()
     }
     
+    @IBAction func signInNaverButtonPressed(_ sender: UIButton) {
+        loginInstance?.requestThirdPartyLogin()
+    }
+    
     // MARK: - Methods
     func setUI() {
         // 밑줄만 남기고 텍스트 필드 출력
@@ -46,6 +54,7 @@ class LoginViewController: UIViewController {
         emailTextField.delegate = self
         pwTextField.delegate = self
         vm.delegate = self
+        loginInstance?.delegate = self
     }
 
     
@@ -121,6 +130,32 @@ extension LoginViewController: GIDSignInDelegate {
     }
 }
 
+// MARK: - NaverThirdPartyLogin Methods
+
+extension LoginViewController: NaverThirdPartyLoginConnectionDelegate {
+    // 로그인 성공 시 호출
+    func oauth20ConnectionDidFinishRequestACTokenWithAuthCode() {
+        loginSucceed()
+    }
+    
+    // 접근 토근 갱신
+    func oauth20ConnectionDidFinishRequestACTokenWithRefreshToken() {
+        
+    }
+    
+    // 로그아웃 시 호출
+    func oauth20ConnectionDidFinishDeleteToken() {
+        
+    }
+    
+    // 모든 Error
+    func oauth20Connection(_ oauthConnection: NaverThirdPartyLoginConnection!, didFailWithError error: Error!) {
+        loginFailed(error: error)
+    }
+    
+    
+}
+
 // MARK: - Section Heading
 
 extension LoginViewController: LoginButtonDelegate {
@@ -148,9 +183,8 @@ extension LoginViewController: LoginButtonDelegate {
         loginButton.delegate = self
         
         NSLayoutConstraint.activate([
-            loginButton.topAnchor.constraint(equalTo: signInGoogleButton.bottomAnchor, constant: 63),
+            loginButton.topAnchor.constraint(equalTo: signInNaverButton.bottomAnchor, constant: 8),
             loginButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            loginButton.heightAnchor.constraint(equalToConstant: 47),
             loginButton.widthAnchor.constraint(equalTo: signInGoogleButton.widthAnchor)
         ])
     }

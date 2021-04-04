@@ -9,6 +9,7 @@ import UIKit
 import KakaoSDKCommon
 import KakaoSDKAuth
 import FBSDKCoreKit
+import NaverThirdPartyLogin
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
@@ -23,13 +24,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let url = URLContexts.first?.url {
             if (AuthApi.isKakaoTalkLoginUrl(url)) {
                 _ = AuthController.handleOpenUrl(url: url)
-            } else {
+            } else if url.absoluteString.contains("facebook") {
                 ApplicationDelegate.shared.application(
                         UIApplication.shared,
                         open: url,
                         sourceApplication: nil,
                         annotation: [UIApplication.OpenURLOptionsKey.annotation]
                     )
+            } else if url.absoluteString.contains("naver") {
+                NaverThirdPartyLoginConnection
+                    .getSharedInstance()?
+                    .receiveAccessToken(URLContexts.first?.url)
             }
         }
     }

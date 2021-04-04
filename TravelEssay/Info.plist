@@ -42,7 +42,25 @@
 				<string>naverlogin</string>
 			</array>
 		</dict>
-	</array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>fb303991481155317</string>
+            </array>
+        </dict>
+    </array>
+    <key>FacebookAppID</key>
+    <string>303991481155317</string>
+    <key>FacebookDisplayName</key>
+    <string>TravelEssay</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>fbapi</string>
+        <string>fbauth</string>
+        <string>fb-messenger-share-api</string>
+        <string>fbauth2</string>
+        <string>fbshareextension</string>
+    </array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSApplicationQueriesSchemes</key>
@@ -102,5 +120,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>naversearchapp</string>
+        <string>naversearchthirdlogin</string>
+    </array>
 </dict>
 </plist>
