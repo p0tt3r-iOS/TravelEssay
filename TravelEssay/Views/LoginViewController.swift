@@ -7,9 +7,7 @@
 
 import UIKit
 
-import Firebase
 import GoogleSignIn
-import FBSDKCoreKit
 import FBSDKLoginKit
 import NaverThirdPartyLogin
 
@@ -31,7 +29,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signInGoogleButtonPressed(_ sender: UIButton) {
-        googleLogin()
+        vm.googleLogin()
     }
     
     @IBAction func signInKakaoButtonPressed(_ sender: UIButton) {
@@ -43,32 +41,38 @@ class LoginViewController: UIViewController {
     }
     
     // MARK: - Methods
-    func setUI() {
+    private func setUI() {
         // 밑줄만 남기고 텍스트 필드 출력
         emailTextField.underlined(placeholder: "Email")
         pwTextField.underlined(placeholder: "Password")
         addFacebookLoginButton()
     }
     
-    func setDelegate() {
+    private func setDelegate() {
         emailTextField.delegate = self
         pwTextField.delegate = self
         vm.delegate = self
-        loginInstance?.delegate = self
+        loginInstance?.delegate = vm
     }
 
+
     
-    func googleLogin() {
-        // Configure the Google Sign In instance
-        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()!.options.clientID
-        GIDSignIn.sharedInstance().delegate = self
+    private func addFacebookLoginButton() {
+        let loginButton = FBLoginButton()
+        loginButton.layer.cornerRadius = 14
+        loginButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(loginButton)
         
-        // Start the sign in flow
-        GIDSignIn.sharedInstance()?.presentingViewController = self
-        GIDSignIn.sharedInstance()?.signIn()
+        loginButton.delegate = vm
+        
+        NSLayoutConstraint.activate([
+            loginButton.topAnchor.constraint(equalTo: signInNaverButton.bottomAnchor, constant: 8),
+            loginButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            loginButton.widthAnchor.constraint(equalTo: signInGoogleButton.widthAnchor)
+        ])
     }
     
-    func alignSignInLogo(of button: UIButton) {
+    private func alignSignInLogo(of button: UIButton) {
         button.imageView?.translatesAutoresizingMaskIntoConstraints = false
         button.imageView?.leadingAnchor.constraint(equalTo: signInGoogleButton.leadingAnchor, constant: 24).isActive = true
         button.imageView?.centerYAnchor.constraint(equalTo: signInGoogleButton.centerYAnchor).isActive = true
@@ -114,82 +118,6 @@ extension LoginViewController: UITextFieldDelegate {
     }
 }
 
-// MARK: - GIDSignInDelegate Methods
-
-extension LoginViewController: GIDSignInDelegate {
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        guard error == nil else { return self.makeAlert(title: "에러", message: error.localizedDescription)}
-        
-        guard let authentication = user.authentication else { return self.makeAlert(title: "에러", message: error.localizedDescription)}
-        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-                                                       accessToken: authentication.accessToken)
-        Auth.auth().signIn(with: credential) { result, error in
-            guard error == nil else { return self.makeAlert(title: "에러", message: (error?.localizedDescription)!) }
-            self.loginSucceed()
-        }
-    }
-}
-
-// MARK: - NaverThirdPartyLogin Methods
-
-extension LoginViewController: NaverThirdPartyLoginConnectionDelegate {
-    // 로그인 성공 시 호출
-    func oauth20ConnectionDidFinishRequestACTokenWithAuthCode() {
-        loginSucceed()
-    }
-    
-    // 접근 토근 갱신
-    func oauth20ConnectionDidFinishRequestACTokenWithRefreshToken() {
-        
-    }
-    
-    // 로그아웃 시 호출
-    func oauth20ConnectionDidFinishDeleteToken() {
-        
-    }
-    
-    // 모든 Error
-    func oauth20Connection(_ oauthConnection: NaverThirdPartyLoginConnection!, didFailWithError error: Error!) {
-        loginFailed(error: error)
-    }
-    
-    
-}
-
-// MARK: - Section Heading
-
-extension LoginViewController: LoginButtonDelegate {
-    func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
-        guard error == nil else {
-            loginFailed(error: error!)
-            return
-        }
-        
-        let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
-        
-        vm.signInWithFacebook(with: credential)
-    }
-    
-    func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
-    }
-    
-    
-    func addFacebookLoginButton() {
-        let loginButton = FBLoginButton()
-        loginButton.layer.cornerRadius = 14
-        loginButton.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(loginButton)
-        
-        loginButton.delegate = self
-        
-        NSLayoutConstraint.activate([
-            loginButton.topAnchor.constraint(equalTo: signInNaverButton.bottomAnchor, constant: 8),
-            loginButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            loginButton.widthAnchor.constraint(equalTo: signInGoogleButton.widthAnchor)
-        ])
-    }
-}
-
 // MARK: - LoginDelegate Method
 
 extension LoginViewController: LoginDelegate {
@@ -199,5 +127,9 @@ extension LoginViewController: LoginDelegate {
     
     func loginFailed(error: Error) {
         makeAlert(title: "로그인 실패", message: error.localizedDescription)
+    }
+    
+    func configurePresentingVC() {
+        GIDSignIn.sharedInstance()?.presentingViewController = self
     }
 }

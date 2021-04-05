@@ -8,15 +8,18 @@
 import UIKit
 
 import Firebase
+import FBSDKCoreKit
+import FBSDKLoginKit
 import GoogleSignIn
 import KakaoSDKCommon
 import KakaoSDKAuth
 import KakaoSDKUser
+import NaverThirdPartyLogin
 
-class LoginViewModel {
+class LoginViewModel: NSObject {
     weak var delegate: LoginDelegate?
     
-    // MARK: - Firebase 🔥
+    // MARK: - Email Login Method with Firebase 🔥
     
     func signInWithEmail(_ email: String, password: String) {
         Auth.auth().signIn(withEmail: email, password: password) { result, error in
@@ -24,22 +27,25 @@ class LoginViewModel {
                 self.delegate?.loginFailed(error: error!)
                 return
             }
+            
             self.delegate?.loginSucceed()
         }
     }
     
-    // MARK: - Facebook with Firebase
+    // MARK: - Pass Facebook Auth to Firebase
     
     func signInWithFacebook(with credential: AuthCredential) {
         Auth.auth().signIn(with: credential) { authResult, error in
-            guard error == nil else { self.delegate?.loginFailed(error: error!)
+            guard error == nil else {
+                self.delegate?.loginFailed(error: error!)
                 return
             }
+            
             self.delegate?.loginSucceed()
         }
     }
     
-    // MARK: - Kakao
+    // MARK: - Kakao Login Methods
     
     func signInWithKakao() {
         // 카카오톡 설치 여부 확인 후 여부에 따라(카톡 앱/웹) 로그인
@@ -49,6 +55,7 @@ class LoginViewModel {
                     self.delegate?.loginFailed(error: error!)
                     return
                 }
+                
                 self.delegate?.loginSucceed()
 //                self.customAuthLogin(token: oauthToken!.accessToken)
 //                커스텀 토큰 로그인 시도(JWT토큰 없이는 불가)
@@ -59,6 +66,7 @@ class LoginViewModel {
                     self.delegate?.loginFailed(error: error!)
                     return
                 }
+                
                 self.delegate?.loginSucceed()
 //                self.customAuthLogin(token: oauthToken!.accessToken)
 //                커스텀 토큰 로그인 시도(JWT토큰 없이는 불가)
@@ -72,11 +80,75 @@ class LoginViewModel {
                 self.delegate?.loginFailed(error: error!)
                 return
             }
+            
             self.delegate?.loginSucceed()
         }
     }
-
 }
+
+// MARK: - Facebook Login Methods
+
+extension LoginViewModel: LoginButtonDelegate {
+    func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
+        guard error == nil else { return delegate!.loginFailed(error: error!) }
+        
+        let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
+        
+        signInWithFacebook(with: credential)
+    }
     
+    func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
+    }
+}
 
+// MARK: - Google Login(GIDSignInDelegate) Methods
 
+extension LoginViewModel: GIDSignInDelegate {
+    func googleLogin() {
+        // Configure the Google Sign In instance
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()!.options.clientID
+        GIDSignIn.sharedInstance().delegate = self
+        
+        // Start the sign in flow
+        delegate?.configurePresentingVC()
+        GIDSignIn.sharedInstance()?.signIn()
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        guard error == nil else { return delegate!.loginFailed(error: error!) }
+        guard let authentication = user.authentication else { return delegate!.loginFailed(error: error!) }
+        
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                       accessToken: authentication.accessToken)
+        
+        Auth.auth().signIn(with: credential) { result, error in
+            guard error == nil else { return self.delegate!.loginFailed(error: error!) }
+            
+            self.delegate!.loginSucceed()
+        }
+    }
+}
+
+// MARK: - Naver Login Methods
+
+extension LoginViewModel: NaverThirdPartyLoginConnectionDelegate {
+    // 로그인 성공 시 호출
+    func oauth20ConnectionDidFinishRequestACTokenWithAuthCode() {
+        delegate!.loginSucceed()
+    }
+    
+    // 접근 토근 갱신
+    func oauth20ConnectionDidFinishRequestACTokenWithRefreshToken() {
+        
+    }
+    
+    // 로그아웃 시 호출
+    func oauth20ConnectionDidFinishDeleteToken() {
+        
+    }
+    
+    // 모든 Error
+    func oauth20Connection(_ oauthConnection: NaverThirdPartyLoginConnection!, didFailWithError error: Error!) {
+        delegate!.loginFailed(error: error)
+    }
+}
