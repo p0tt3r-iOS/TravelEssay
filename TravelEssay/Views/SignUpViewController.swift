@@ -9,7 +9,7 @@ import UIKit
 
 class SignUpViewController: UIViewController {
     // MARK: - Properties
-    let signUpViewModel = SignUpViewModel()
+    let vm = SignUpViewModel()
     
     // MARK: - IBOutlets
     @IBOutlet weak var emailTextField: UITextField!
@@ -50,14 +50,7 @@ class SignUpViewController: UIViewController {
         guard checkTextField() else { return }
         guard checkPassword() else { return }
         
-        signUpViewModel.createUser(email: self.emailTextField.text!, password: self.pwTextField.text!) { result, error in
-            guard error == nil else {
-                self.makeAlert(title: "에러", message: error!)
-                return
-            }
-            
-            self.performSegue(withIdentifier: "signUpSucceed", sender: self)
-        }
+        vm.createUser(email: self.emailTextField.text!, password: self.pwTextField.text!)
     }
     
     // MARK: - Life Cycles
@@ -66,6 +59,18 @@ class SignUpViewController: UIViewController {
 
         title = "회원가입"
         setUI()
+        vm.delegate = self
+    }
+}
+
+// MARK: - Sign Up Delegate Methods
+extension SignUpViewController: SignUpDelegate {
+    func signUpSucceed() {
+        performSegue(withIdentifier: "SignUpSucceed", sender: self)
+    }
+    
+    func signUpFailed(error: String) {
+        makeAlert(title: "회원가입 실패", message: error)
     }
 }
 
@@ -84,5 +89,4 @@ extension SignUpViewController: UITextFieldDelegate {
 }
 
     
-
 

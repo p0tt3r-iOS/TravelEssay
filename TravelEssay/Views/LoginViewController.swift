@@ -54,8 +54,6 @@ class LoginViewController: UIViewController {
         vm.delegate = self
         loginInstance?.delegate = vm
     }
-
-
     
     private func addFacebookLoginButton() {
         let loginButton = FBLoginButton()

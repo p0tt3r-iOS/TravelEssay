@@ -12,15 +12,28 @@ import Firebase
 
 
 class SignUpViewModel {
+    weak var delegate: SignUpDelegate?
+    
     // MARK: - Firebase 🔥
 
-    func createUser(email: String, password: String, completion: @escaping (Bool, String?) -> Void) {
-        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-            guard error == nil else {
-                completion(false, error?.localizedDescription)
-                return
+    func createUser(email: String, password: String) {
+//        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+//            guard error == nil else {
+//                completion(false, error?.localizedDescription)
+//                return
+//            }
+//            completion(true, nil)
+//        }
+        
+        let register = SignUpModel(email: email, password: password, provider: "N", token: "testtoken", nickname: "nick")
+        
+        // Server Sign Up
+        APIManager.shared.callingSignUpAPI(register: register) { succeed, error in
+            if succeed {
+                self.delegate?.signUpSucceed()
+            } else {
+                self.delegate?.signUpFailed(error: error)
             }
-            completion(true, nil)
         }
     }
     

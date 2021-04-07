@@ -16,6 +16,11 @@
 		BCAAB76126047AA50080F080 /* NanumSquareBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCAAB75D26047A890080F080 /* NanumSquareBold.ttf */; };
 		BCAAB76226047AA50080F080 /* NanumSquareRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCAAB75F26047A950080F080 /* NanumSquareRegular.ttf */; };
 		BCAFB6EF261756680033A2E8 /* LoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAFB6EE261756680033A2E8 /* LoginDelegate.swift */; };
+		BCB5FCA0261DADE300BA2FC7 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB5FC9F261DADE300BA2FC7 /* LoginModel.swift */; };
+		BCB5FCA5261DAF6E00BA2FC7 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB5FCA4261DAF6E00BA2FC7 /* APIManager.swift */; };
+		BCB5FCA9261DB34A00BA2FC7 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB5FCA8261DB34A00BA2FC7 /* SignUpModel.swift */; };
+		BCB5FCAD261DB92E00BA2FC7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB5FCAC261DB92E00BA2FC7 /* Constants.swift */; };
+		BCB5FCB1261DD42200BA2FC7 /* SignUpDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB5FCB0261DD42200BA2FC7 /* SignUpDelegate.swift */; };
 		BCBAFF9A26063E29004E90DB /* ResetPWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBAFF9926063E29004E90DB /* ResetPWViewController.swift */; };
 		BCD35AA82602FA3300A06BCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD35AA72602FA3300A06BCF /* AppDelegate.swift */; };
 		BCD35AAA2602FA3300A06BCF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD35AA92602FA3300A06BCF /* SceneDelegate.swift */; };
@@ -41,6 +46,11 @@
 		BCAAB75D26047A890080F080 /* NanumSquareBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareBold.ttf; sourceTree = "<group>"; };
 		BCAAB75F26047A950080F080 /* NanumSquareRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRegular.ttf; sourceTree = "<group>"; };
 		BCAFB6EE261756680033A2E8 /* LoginDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDelegate.swift; sourceTree = "<group>"; };
+		BCB5FC9F261DADE300BA2FC7 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		BCB5FCA4261DAF6E00BA2FC7 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		BCB5FCA8261DB34A00BA2FC7 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
+		BCB5FCAC261DB92E00BA2FC7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BCB5FCB0261DD42200BA2FC7 /* SignUpDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDelegate.swift; sourceTree = "<group>"; };
 		BCBAFF9926063E29004E90DB /* ResetPWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPWViewController.swift; sourceTree = "<group>"; };
 		BCD35AA42602FA3300A06BCF /* TravelEssay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelEssay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD35AA72602FA3300A06BCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,8 +99,27 @@
 			children = (
 				BC786584260993D600CCE4CE /* Extension.swift */,
 				BCAFB6EE261756680033A2E8 /* LoginDelegate.swift */,
+				BCB5FCB0261DD42200BA2FC7 /* SignUpDelegate.swift */,
+				BCB5FCAC261DB92E00BA2FC7 /* Constants.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		BCB5FC9E261DADBC00BA2FC7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BCB5FC9F261DADE300BA2FC7 /* LoginModel.swift */,
+				BCB5FCA8261DB34A00BA2FC7 /* SignUpModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BCB5FCA3261DAF5A00BA2FC7 /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				BCB5FCA4261DAF6E00BA2FC7 /* APIManager.swift */,
+			);
+			path = APIManager;
 			sourceTree = "<group>";
 		};
 		BCD35A9B2602FA3300A06BCF = {
@@ -114,9 +143,11 @@
 		BCD35AA62602FA3300A06BCF /* TravelEssay */ = {
 			isa = PBXGroup;
 			children = (
+				BCB5FCA3261DAF5A00BA2FC7 /* APIManager */,
 				BC786583260993C500CCE4CE /* Utility */,
-				BC52C4CE260445250047DEFC /* ViewModels */,
+				BCB5FC9E261DADBC00BA2FC7 /* Models */,
 				BCD35AC72603210100A06BCF /* Views */,
+				BC52C4CE260445250047DEFC /* ViewModels */,
 				BCD35AA72602FA3300A06BCF /* AppDelegate.swift */,
 				BCD35AA92602FA3300A06BCF /* SceneDelegate.swift */,
 				BCD35AAD2602FA3300A06BCF /* Main.storyboard */,
@@ -287,15 +318,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCB5FCB1261DD42200BA2FC7 /* SignUpDelegate.swift in Sources */,
 				BCAFB6EF261756680033A2E8 /* LoginDelegate.swift in Sources */,
+				BCB5FCA0261DADE300BA2FC7 /* LoginModel.swift in Sources */,
 				BCBAFF9A26063E29004E90DB /* ResetPWViewController.swift in Sources */,
 				BC99AB7E260AF16100DAA1AB /* SignUpViewModel.swift in Sources */,
 				BCD35AC92603212900A06BCF /* LoginViewController.swift in Sources */,
+				BCB5FCAD261DB92E00BA2FC7 /* Constants.swift in Sources */,
 				BC8791792608748E000F8F10 /* LoginViewModel.swift in Sources */,
 				BCD35AAC2602FA3300A06BCF /* MainViewController.swift in Sources */,
 				BCD35AA82602FA3300A06BCF /* AppDelegate.swift in Sources */,
+				BCB5FCA9261DB34A00BA2FC7 /* SignUpModel.swift in Sources */,
 				BCD35AAA2602FA3300A06BCF /* SceneDelegate.swift in Sources */,
 				BC99AB81260AF8F900DAA1AB /* ResetPwViewModel.swift in Sources */,
+				BCB5FCA5261DAF6E00BA2FC7 /* APIManager.swift in Sources */,
 				BC92CF8726059A1E00CAC81A /* SignUpViewController.swift in Sources */,
 				BC786585260993D600CCE4CE /* Extension.swift in Sources */,
 			);

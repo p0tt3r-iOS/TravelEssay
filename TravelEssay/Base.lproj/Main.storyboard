@@ -281,7 +281,7 @@
                         <outlet property="cfPwTextField" destination="j83-H2-nX0" id="Aqa-s8-pFA"/>
                         <outlet property="emailTextField" destination="gXA-QZ-B0v" id="8Up-Df-PYR"/>
                         <outlet property="pwTextField" destination="Jdq-zo-PPH" id="wPv-g3-GR5"/>
-                        <segue destination="mqC-zj-Xi1" kind="show" identifier="signUpSucceed" id="OJt-TE-Lor"/>
+                        <segue destination="mqC-zj-Xi1" kind="show" identifier="SignUpSucceed" id="OJt-TE-Lor"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f8a-qI-NiH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -653,7 +653,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="llX-vQ-Pri"/>
+        <segue reference="OJt-TE-Lor"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Google" width="24" height="24"/>
