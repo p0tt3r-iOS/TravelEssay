@@ -17,11 +17,11 @@ struct LoginResponseModel: Codable {
         let token: String
         let refreshToken: String
         let email: String
-        let useridx: Int
+        let useridx: String
         let nickname: String
     }
     
     let success: Bool
-    let data: Data
+    let data: Data?
     let message: String
 }

@@ -17,6 +17,7 @@ class SignUpViewModel {
     // MARK: - Firebase 🔥
 
     func createUser(email: String, password: String) {
+//        Firebase Auth Register Method
 //        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
 //            guard error == nil else {
 //                completion(false, error?.localizedDescription)
@@ -25,9 +26,9 @@ class SignUpViewModel {
 //            completion(true, nil)
 //        }
         
+        // Server Sign Up
         let register = SignUpModel(email: email, password: password, provider: "N", token: "testtoken", nickname: "nick")
         
-        // Server Sign Up
         APIManager.shared.callingSignUpAPI(register: register) { succeed, error in
             if succeed {
                 self.delegate?.signUpSucceed()

@@ -18,7 +18,7 @@ struct SignUpModel: Encodable {
 struct SignUpResponseModel: Codable {
     struct Data: Codable {
         let email: String
-        let useridx: Int
+        let useridx: String
     }
     
     let success: Bool
