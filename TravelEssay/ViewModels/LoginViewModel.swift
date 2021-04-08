@@ -22,14 +22,26 @@ class LoginViewModel: NSObject {
     // MARK: - Email Login Method with Firebase 🔥
     
     func signInWithEmail(_ email: String, password: String) {
-        Auth.auth().signIn(withEmail: email, password: password) { result, error in
-            guard error == nil else {
-                self.delegate?.loginFailed(error: error!)
-                return
+        // Server Login Method
+        let login = LoginModel(email: email, password: password)
+        APIManager.shared.callingLoginAPI(login: login) { succeed, error in
+            if succeed {
+                self.delegate?.loginSucceed()
+            } else {
+                self.delegate?.loginFailed(error: error)
             }
-            
-            self.delegate?.loginSucceed()
         }
+        
+        
+//        // Firebase Login Method
+//        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+//            guard error == nil else {
+//                self.delegate?.loginFailed(error: error!)
+//                return
+//            }
+//
+//            self.delegate?.loginSucceed()
+//        }
     }
     
     // MARK: - Pass Facebook Auth to Firebase
@@ -37,7 +49,7 @@ class LoginViewModel: NSObject {
     func signInWithFacebook(with credential: AuthCredential) {
         Auth.auth().signIn(with: credential) { authResult, error in
             guard error == nil else {
-                self.delegate?.loginFailed(error: error!)
+                self.delegate?.loginFailed(error: error!.localizedDescription)
                 return
             }
             
@@ -52,7 +64,7 @@ class LoginViewModel: NSObject {
         if (UserApi.isKakaoTalkLoginAvailable()) {
             UserApi.shared.loginWithKakaoTalk { oauthToken, error in
                 guard error == nil else {
-                    self.delegate?.loginFailed(error: error!)
+                    self.delegate?.loginFailed(error: error!.localizedDescription)
                     return
                 }
                 
@@ -63,7 +75,7 @@ class LoginViewModel: NSObject {
         } else {
             UserApi.shared.loginWithKakaoAccount { oauthToken, error in
                 guard error == nil else {
-                    self.delegate?.loginFailed(error: error!)
+                    self.delegate?.loginFailed(error: error!.localizedDescription)
                     return
                 }
                 
@@ -77,7 +89,7 @@ class LoginViewModel: NSObject {
     private func customAuthLogin(token: String) {
         Auth.auth().signIn(withCustomToken: token) { result, error in
             guard error == nil else {
-                self.delegate?.loginFailed(error: error!)
+                self.delegate?.loginFailed(error: error!.localizedDescription)
                 return
             }
             
@@ -90,7 +102,7 @@ class LoginViewModel: NSObject {
 
 extension LoginViewModel: LoginButtonDelegate {
     func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
-        guard error == nil else { return delegate!.loginFailed(error: error!) }
+        guard error == nil else { return delegate!.loginFailed(error: error!.localizedDescription) }
         
         let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
         
@@ -115,14 +127,14 @@ extension LoginViewModel: GIDSignInDelegate {
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        guard error == nil else { return delegate!.loginFailed(error: error!) }
-        guard let authentication = user.authentication else { return delegate!.loginFailed(error: error!) }
+        guard error == nil else { return delegate!.loginFailed(error: error.localizedDescription) }
+        guard let authentication = user.authentication else { return delegate!.loginFailed(error: error.localizedDescription) }
         
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                        accessToken: authentication.accessToken)
         
         Auth.auth().signIn(with: credential) { result, error in
-            guard error == nil else { return self.delegate!.loginFailed(error: error!) }
+            guard error == nil else { return self.delegate!.loginFailed(error: error!.localizedDescription) }
             
             self.delegate!.loginSucceed()
         }
@@ -149,6 +161,6 @@ extension LoginViewModel: NaverThirdPartyLoginConnectionDelegate {
     
     // 모든 Error
     func oauth20Connection(_ oauthConnection: NaverThirdPartyLoginConnection!, didFailWithError error: Error!) {
-        delegate!.loginFailed(error: error)
+        delegate!.loginFailed(error: error.localizedDescription)
     }
 }

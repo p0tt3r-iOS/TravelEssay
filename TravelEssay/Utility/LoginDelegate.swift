@@ -10,6 +10,6 @@ import UIKit
 /// Delegate for signaling that login has done successfully.
 protocol LoginDelegate: NSObject {
     func loginSucceed()
-    func loginFailed(error: Error)
+    func loginFailed(error: String)
     func configurePresentingVC()
 }

@@ -23,7 +23,7 @@ class APIManager {
     func callingSignUpAPI(register: SignUpModel, completionHandler: @escaping (Bool, String) -> Void) {
         let headers: HTTPHeaders = [.contentType("application/json")]
         
-        AF.request(Constants.signUp_url, method: .post, parameters: register, encoder: JSONParameterEncoder.default, headers: headers).responseData { response in
+        AF.request(Constants.signUp_url, method: .post, parameters: register, encoder: JSONParameterEncoder.default, headers: headers).response { response in
             debugPrint(response)
             
             guard let result = try? self.decoder.decode(SignUpResponseModel.self, from: response.data!) else {

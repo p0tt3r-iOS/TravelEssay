@@ -17,15 +17,6 @@ class SignUpViewModel {
     // MARK: - Firebase 🔥
 
     func createUser(email: String, password: String) {
-//        Firebase Auth Register Method
-//        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-//            guard error == nil else {
-//                completion(false, error?.localizedDescription)
-//                return
-//            }
-//            completion(true, nil)
-//        }
-        
         // Server Sign Up
         let register = SignUpModel(email: email, password: password, provider: "N", token: "testtoken", nickname: "nick")
         
@@ -36,6 +27,14 @@ class SignUpViewModel {
                 self.delegate?.signUpFailed(error: error)
             }
         }
+        
+//        Firebase Auth Register Method
+//        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+//            guard error == nil else {
+//                completion(false, error?.localizedDescription)
+//                return
+//            }
+//            completion(true, nil)
+//        }
     }
-    
 }

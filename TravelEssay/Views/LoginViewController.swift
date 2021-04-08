@@ -123,8 +123,8 @@ extension LoginViewController: LoginDelegate {
         self.performSegue(withIdentifier: "LoginSucceed", sender: self)
     }
     
-    func loginFailed(error: Error) {
-        makeAlert(title: "로그인 실패", message: error.localizedDescription)
+    func loginFailed(error: String) {
+        makeAlert(title: "로그인 실패", message: error)
     }
     
     func configurePresentingVC() {
